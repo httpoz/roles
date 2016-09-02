@@ -1,0 +1,22 @@
+{
+  "name": "httpoz/roles",
+  "description": "Powerful package for handling roles and permissions in Laravel 5.3.",
+  "keywords": ["roles", "permissions", "acl", "auth", "laravel", "illuminate"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Oscar Mwanandimai",
+      "email": "osar.mwana@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.6.4",
+    "illuminate/support": "5.3.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Bican\\Roles\\": "src/"
+    }
+  }
+}
