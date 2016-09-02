@@ -48,8 +48,8 @@ class RolesServiceProvider extends ServiceProvider
         });
 
         Blade::directive('group', function ($expression) {
-            $level = trim($expression, '()');
-            return "<?php if (Auth::check() && Auth::user()->group()): ?>";
+            $group = trim($expression, '()');
+            return "<?php if (Auth::check() && Auth::user()->group() == $group): ?>";
         });
         Blade::directive('endgroup', function () {
             return "<?php endif; ?>";
