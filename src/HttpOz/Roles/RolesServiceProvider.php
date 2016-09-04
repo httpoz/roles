@@ -40,7 +40,7 @@ class RolesServiceProvider extends ServiceProvider
     {
 
         Blade::directive('role', function ($expression) {
-            return "<?php if (Auth::check() && Auth::user()->isRole{$expression}): ?>";
+            return "<?php if (Auth::check() && Auth::user()->isRole($expression): ?>";
         });
 
         Blade::directive('endrole', function () {
@@ -48,8 +48,7 @@ class RolesServiceProvider extends ServiceProvider
         });
 
         Blade::directive('group', function ($expression) {
-            $group = trim($expression, '()');
-            return "<?php if (Auth::check() && Auth::user()->group() == $group): ?>";
+            return "<?php if (Auth::check() && Auth::user()->group() == $expression): ?>";
         });
         Blade::directive('endgroup', function () {
             return "<?php endif; ?>";

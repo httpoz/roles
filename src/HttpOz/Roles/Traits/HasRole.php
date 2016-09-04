@@ -48,7 +48,7 @@ trait HasRole
         if ($this->isPretendEnabled()) {
             return $this->pretend('isRole');
         }
-        return $this->{$this->getMethodName('isRole', $all)}($role);
+        return $this->{$this->getMethodName('is', $all)}($role);
     }
 
     /**
