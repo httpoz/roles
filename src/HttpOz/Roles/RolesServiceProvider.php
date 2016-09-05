@@ -40,7 +40,7 @@ class RolesServiceProvider extends ServiceProvider
     {
 
         Blade::directive('role', function ($expression) {
-            return "<?php if (Auth::check() && Auth::user()->isRole($expression): ?>";
+            return "<?php if (Auth::check() && Auth::user()->isRole($expression)): ?>";
         });
 
         Blade::directive('endrole', function () {
