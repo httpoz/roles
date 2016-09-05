@@ -25,7 +25,7 @@ return [
     |
     */
 
-    'separator' => '_',
+    'separator' => '.',
 
     /*
     |--------------------------------------------------------------------------
@@ -55,9 +55,7 @@ return [
     'pretend' => [
         'enabled' => false,
         'options' => [
-            'isRole' => true,
-            'can' => true,
-            'allowed' => true,
+            'isRole' => true
         ],
     ],
 
