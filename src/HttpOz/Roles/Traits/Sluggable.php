@@ -19,4 +19,9 @@ trait Sluggable
         $this->attributes['slug'] = str_slug($value, config('roles.separator'));
     }
 
+    public function setGroupAttribute($value)
+    {
+        $this->attributes['group'] = str_slug($value, config('roles.separator'));
+    }
+
 }
