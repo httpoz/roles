@@ -63,7 +63,7 @@ Add the package to your application service providers in `config/app.php` file.
 
 ### Config File And Migrations
 
-Publish the package config file and migrations to your application. Run these commands inside your terminal.
+Publish the package config file and migrations to your application. Run this command inside your terminal.
 
     php artisan vendor:publish --provider="HttpOz\Roles\RolesServiceProvider"
 
