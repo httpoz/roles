@@ -22,6 +22,7 @@ This project was largely inspired by Roman's [romanbican/roles](https://github.c
     - [Creating Roles](#creating-roles)
     - [Attaching And Detaching Roles](#attaching-and-detaching-roles)
     - [Checking For Roles](#checking-for-roles)
+    - [Find users by their role](#find-users-by-their-role)
     - [Groups](#groups)
     - [Blade Extensions](#blade-extensions)
     - [Middleware](#middleware)
@@ -168,6 +169,25 @@ if ($user->isRole('admin|moderator', true)) {
     // if user has all roles
 }
 ```
+
+### Find users by their role
+ There are multiple ways to get a list of users by their given role.
+ 
+ **Using the role's id**
+ ```php 
+ $admins = Role::find(1)->users;
+ ```
+ 
+ **Using the role's slug**
+ ```php
+ $adminRole = Role::where('slug', 'admin')->first();
+ $admins = $role->users;
+ ```
+ **Using the role's group**
+ ```php
+ $adminRole = Role::where('group', 'application.managers')->first();
+ $admins = $role->users;
+ ```
 
 ### Groups
 
