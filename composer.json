@@ -15,7 +15,7 @@
     "illuminate/support": "5.3.*"
   },
   "autoload": {
-    "psr-4": {
+    "psr-0": {
       "HttpOz\\Roles\\": "src/"
     }
   }
