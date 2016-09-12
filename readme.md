@@ -234,11 +234,11 @@ This package comes with `VerifyRole` and `VerifyGroup` middleware. You must add 
  * @var array
  */
 protected $routeMiddleware = [
-    'auth' => \App\Http\Middleware\Authenticate::class,
-    'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-    'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+
+    // ...
+
     'role' => \HttpOz\Roles\Middleware\VerifyRole::class,
-    'group' => \Http\Roles\Middleware\VerifyGroup::class,
+    'group' => \HttpOz\Roles\Middleware\VerifyGroup::class,
 ];
 ```
 
