@@ -17,7 +17,7 @@ This project was largely inspired by Roman's [romanbican/roles](https://github.c
     - [Composer](#composer)
     - [Service Provider](#service-provider)
     - [Config File And Migrations](#config-file-and-migrations)
-    - [HasRoleAndPermission Trait And Contract](#hasroleandpermission-trait-and-contract)
+    - [HasRoleAndPermission Trait And Contract](#hasrole-trait-and-contract)
 - [Usage](#usage)
     - [Creating Roles](#creating-roles)
     - [Attaching And Detaching Roles](#attaching-and-detaching-roles)
