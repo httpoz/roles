@@ -30,15 +30,15 @@ class VerifyGroup
      *
      * @param \Illuminate\Http\Request $request
      * @param \Closure $next
-     * @param int $level
+     * @param int $group
      * @return mixed
-     * @throws \HttpOz\Roles\Exceptions\LevelDeniedException
+     * @throws \HttpOz\Roles\Exceptions\GroupDeniedException
      */
-    public function handle($request, Closure $next, $level)
+    public function handle($request, Closure $next, $group)
     {
-        if ($this->auth->check() && $this->auth->user()->group() >= $level) {
+        if ($this->auth->check() && $this->auth->user()->group() >= $group) {
             return $next($request);
         }
-        throw new GroupDeniedException($level);
+        throw new GroupDeniedException($group);
     }
 }
