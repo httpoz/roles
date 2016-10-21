@@ -26,6 +26,7 @@ This project was largely inspired by Roman's [romanbican/roles](https://github.c
     - [Groups](#groups)
     - [Blade Extensions](#blade-extensions)
     - [Middleware](#middleware)
+    - [Displaying Errors](#displaying-errors)
 - [Config File](#config-file)
 - [More Information](#more-information)
 - [License](#license)
@@ -260,27 +261,29 @@ $router->get('/example', [
 
 It throws `\HttpOz\Roles\Exceptions\RoleDeniedException` or `\HttpOz\Roles\Exceptions\GoupDeniedException` exceptions if it goes wrong.
 
-You can catch these exceptions inside `app/Exceptions/Handler.php` file and do whatever you want.
+You can catch these exceptions inside `app/Exceptions/Handler.php` file and do whatever you want, example below.
+
+### Displaying Errors
+
+Extending from the above, you can control the error page that your application users see when they try to open a page their role is not allowed to. This package already has a view bundled with it that should have been published to `resources/views/vendor/roles/error.blade.php` when you published the package. Simply add the below condition inside your `app\Exceptions\Handler.php`'s render function. Feel free to point to another view of your choice.
 
 ```php
 /**
- * Render an exception into an HTTP response.
- *
- * @param  \Illuminate\Http\Request  $request
- * @param  \Exception  $e
- * @return \Illuminate\Http\Response
- */
-public function render($request, Exception $e)
-{
-    if ($e instanceof \HttpOz\Roles\Exceptions\RoleDeniedException) {
-        // you can for example flash message, redirect...
-        return redirect()->back();
+     * Render an exception into an HTTP response.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Exception  $exception
+     * @return \Illuminate\Http\Response
+     */
+    public function render($request, Exception $exception)
+    {
+        if ($exception instanceof \HttpOz\Roles\Exceptions\RoleDeniedException || $exception instanceof \HttpOz\Roles\Exceptions\GroupDeniedException) {
+            return response()->view('vendor.roles.errors', compact('exception'), 403);
+        }
+
+        return parent::render($request, $exception);
     }
-
-    return parent::render($request, $e);
-}
 ```
-
 
 ## Config File
 

@@ -28,6 +28,10 @@ class RolesServiceProvider extends ServiceProvider
             $stub.'create_role_user_table.php' => $target.date('Y_m_d_His', time()+1).'_create_role_user_table.php'
         ], 'migrations');
 
+        $this->publishes([
+            __DIR__.'/../../views/' => resource_path('views/vendor'),
+        ], 'views');
+
         $this->registerBladeExtensions();
     }
 
