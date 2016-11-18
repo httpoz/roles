@@ -20,7 +20,7 @@ This project was largely inspired by Roman's [romanbican/roles](https://github.c
     - [HasRole Trait And Contract](#hasrole-trait-and-contract)
 - [Usage](#usage)
     - [Creating Roles](#creating-roles)
-    - [Attaching And Detaching Roles](#attaching-and-detaching-roles)
+    - [Attaching, Syncing and Detaching Roles](#attaching-syncing-and-detaching-roles)
     - [Checking For Roles](#checking-for-roles)
     - [Find users by their role](#find-users-by-their-role)
     - [Groups](#groups)
@@ -112,9 +112,10 @@ $moderatorRole = Role::create([
 
 > Because of `Sluggable` trait, if you make a mistake and for example leave a space in slug parameter, it'll be replaced with a dot automatically, because of `str_slug` function.
 
-### Attaching And Detaching Roles
+### Attaching, Syncing And Detaching Roles
 
 It's really simple. You fetch a user from database and call `attachRole` method. There is `BelongsToMany` relationship between `User` and `Role` model.
+Learn about [Many To Many Relationships](https://laravel.com/docs/5.3/eloquent-relationships#updating-many-to-many-relationships)
 
 ```php
 use App\User;
@@ -122,11 +123,9 @@ use App\User;
 $user = User::find($id);
 
 $user->attachRole($adminRole); // you can pass whole object, or just an id
-```
-
-```php
 $user->detachRole($adminRole); // in case you want to detach role
 $user->detachAllRoles(); // in case you want to detach all roles
+$user->syncRoles($roles); // you can pass Eloquent collection, or just an array of ids
 ```
 
 ### Checking For Roles

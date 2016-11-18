@@ -131,6 +131,18 @@ trait HasRole
     }
 
     /**
+     * Sync roles for a user.
+     *
+     * @param array|\HttpOz\Roles\Models\Role[]|\Illuminate\Database\Eloquent\Collection $roles
+     * @return array
+     */
+    public function syncRoles($roles)
+    {
+        $this->roles = null;
+        return $this->roles()->sync($roles);
+    }
+
+    /**
      * Get role level of a user.
      *
      * @return int

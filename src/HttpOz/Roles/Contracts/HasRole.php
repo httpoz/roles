@@ -69,6 +69,14 @@ interface HasRole
      * @return int
      */
     public function detachRole($role);
+    
+    /**
+     * Sync roles for a user.
+     *
+     * @param array|\HttpOz\Roles\Models\Role[]|\Illuminate\Database\Eloquent\Collection $roles
+     * @return array
+     */
+    public function syncRoles($roles);
 
     /**
      * Detach all roles from a user.
