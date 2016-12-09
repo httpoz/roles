@@ -8,7 +8,7 @@
 [![Latest Unstable Version](https://poser.pugx.org/httpoz/roles/v/unstable.svg)](https://packagist.org/packages/httpoz/roles)
 [![License](https://poser.pugx.org/httpoz/roles/license.svg)](https://packagist.org/packages/httpoz/roles)
 
-Powerful package for handling roles in Laravel 5.3. 
+Powerful package for handling roles in Laravel 5.3.
 
 #### History
 This project was largely inspired by Roman's [romanbican/roles](https://github.com/romanbican/roles/) Laravel package. However at the time Laravel 5.3 was released his package was not actively maintained. I have ommitted permissions in this package in favour of Laravel's [Authorization](https://laravel.com/docs/5.3/authorization). I intend to keep this package as simple and minimal as is possible.
@@ -49,14 +49,14 @@ Add the package to your application service providers in `config/app.php` file.
 
 ```php
 'providers' => [
-    
+
     /*
      * Laravel Framework Service Providers...
      */
     Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
     Illuminate\Auth\AuthServiceProvider::class,
     ...
-    
+
     /**
      * Third Party Service Providers...
      */
@@ -151,7 +151,7 @@ if ($user->isAdmin()) {
 And of course, there is a way to check for multiple roles:
 
 ```php
-if ($user->isRole('admin|moderator')) { 
+if ($user->isRole('admin|moderator')) {
     /*
     | Or alternatively:
     | $user->isRole('admin, moderator'), $user->isRole(['admin', 'moderator']),
@@ -174,12 +174,12 @@ if ($user->isRole('admin|moderator', true)) {
 
 ### Find users by their role
  There are multiple ways to get a list of users by their given role.
- 
+
  **Using the role's id**
- ```php 
+ ```php
  $admins = Role::find(1)->users;
  ```
- 
+
  **Using the role's slug**
  ```php
  $adminRole = Role::where('slug', 'admin')->first();
@@ -194,7 +194,7 @@ if ($user->isRole('admin|moderator', true)) {
 ### Groups
 
 When you are creating roles, there is optional parameter `group`. It is set as `default` by default, but you can overwrite it and then you can do something like this:
- 
+
 ```php
 if ($user->group() == 'application.managers') {
     //
@@ -279,7 +279,7 @@ Extending from the above, you can control the error page that your application u
     public function render($request, Exception $exception)
     {
         if ($exception instanceof \HttpOz\Roles\Exceptions\RoleDeniedException || $exception instanceof \HttpOz\Roles\Exceptions\GroupDeniedException) {
-            return response()->view('vendor.roles.errors', compact('exception'), 403);
+            return response()->view('vendor.roles.error', compact('exception'), 403);
         }
 
         return parent::render($request, $exception);
