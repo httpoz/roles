@@ -95,6 +95,7 @@ And that's it!
 ## Usage
 
 ### Creating Roles
+The common practice for creating roles would be to create a seed file and place your role definitions in that file. In the example below we are defining two roles `Admin` and `Forum Moderator` that will be created when we run `php artisan db:seed`.
 
 ```php
 use HttpOz\Roles\Models\Role;
