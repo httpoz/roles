@@ -36,7 +36,7 @@ class VerifyGroup
      */
     public function handle($request, Closure $next, $group)
     {
-        if ($this->auth->check() && $this->auth->user()->group() >= $group) {
+        if ($this->auth->check() && $this->auth->user()->group() == $group) {
             return $next($request);
         }
         throw new GroupDeniedException($group);
