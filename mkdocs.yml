@@ -1,0 +1,12 @@
+site_name: Roles
+docs_dir: docs
+theme: 'material'
+pages:
+    - Home: 'index.md'
+    - Getting Started:
+        - 'Installation': 'getting-started/installation.md'
+        - 'Configuration': 'getting-started/configuration.md'
+    - Concepts:
+        - 'Roles': 'concepts/roles.md'
+        - 'Permits': 'concepts/permits.md'
+    - Views:
