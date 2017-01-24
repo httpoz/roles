@@ -1,6 +1,5 @@
-site_name: Roles
-docs_dir: docs
-theme: 'material'
+site_name: Laravel Roles
+docs_dir: doc
 pages:
     - Home: 'index.md'
     - Getting Started:
