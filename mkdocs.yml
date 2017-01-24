@@ -1,6 +1,6 @@
 site_name: Laravel Roles
 docs_dir: docs
-theme: 'material'
+theme_dir: 'docs/mkdocs-material'
 extra:
     palette:
         primary: 'red'
