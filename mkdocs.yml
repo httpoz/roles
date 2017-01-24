@@ -1,11 +1,16 @@
 site_name: Laravel Roles
-docs_dir: doc
+docs_dir: docs
+theme: 'material'
+extra:
+    palette:
+        primary: 'red'
 pages:
     - Home: 'index.md'
     - Getting Started:
         - 'Installation': 'getting-started/installation.md'
         - 'Configuration': 'getting-started/configuration.md'
     - Concepts:
-        - 'Roles': 'concepts/roles.md'
-        - 'Permits': 'concepts/permits.md'
+        - 'Roles': 'core-concepts/roles.md'
+        - 'Permits': 'core-concepts/permits.md'
     - Views:
+        - 'Blade Syntax': 'views/blade-syntax.md'
