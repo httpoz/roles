@@ -20,7 +20,7 @@ class RolesServiceProvider extends ServiceProvider
             __DIR__ . '/../config/roles.php' => config_path('roles.php')
         ], 'config');
         
-        $stub      = __DIR__ . '/migrations';
+        $stub      = __DIR__ . '/../database/migrations';
         $target    = database_path('migrations').'/';
         
         $this->publishes([
@@ -29,7 +29,7 @@ class RolesServiceProvider extends ServiceProvider
         ], 'migrations');
 
         $this->publishes([
-            __DIR__.'/../resources/views/' => base_path('resources/views/vendor/roles'),
+            __DIR__.'/../resources/views' => base_path('resources/views/vendor'),
         ], 'views');
 
         $this->registerBladeExtensions();
