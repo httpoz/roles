@@ -1,7 +1,7 @@
 {
     "name": "httpoz/roles",
     "description": "Powerful package for handling roles and permissions in Laravel 5.3.",
-    "keywords": ["roles", "permissions", "acl", "auth", "laravel", "illuminate"],
+    "keywords": ["roles", "permissions", "acl", "laravel", "illuminate"],
     "license": "MIT",
     "authors": [{
         "name": "Oscar Mwanandimai",
