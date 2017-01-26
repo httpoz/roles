@@ -17,10 +17,10 @@ class RolesServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../../config/roles.php' => config_path('roles.php')
+            __DIR__ . '/../config/roles.php' => config_path('roles.php')
         ], 'config');
         
-        $stub      = __DIR__ . '/../../migrations/';
+        $stub      = __DIR__ . '/migrations';
         $target    = database_path('migrations').'/';
         
         $this->publishes([
@@ -29,7 +29,7 @@ class RolesServiceProvider extends ServiceProvider
         ], 'migrations');
 
         $this->publishes([
-            __DIR__.'/../../views/' => resource_path('views/vendor'),
+            __DIR__.'/../resources/views/' => base_path('resources/views/vendor/roles'),
         ], 'views');
 
         $this->registerBladeExtensions();
@@ -43,7 +43,7 @@ class RolesServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../../config/roles.php', 'roles');
+        $this->mergeConfigFrom(__DIR__ . '/../config/roles.php', 'roles');
     }
 
     public function registerBladeExtensions()
