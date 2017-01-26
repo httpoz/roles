@@ -15,11 +15,6 @@ This project was largely inspired by Roman's [romanbican/roles](https://github.c
 
 
 
-- [Installation](#installation)
-    - [Composer](#composer)
-    - [Service Provider](#service-provider)
-    - [Config File And Migrations](#config-file-and-migrations)
-    - [HasRole Trait And Contract](#hasrole-trait-and-contract)
 - [Usage](#usage)
     - [Creating Roles](#creating-roles)
     - [Attaching, Syncing and Detaching Roles](#attaching-syncing-and-detaching-roles)
@@ -32,65 +27,6 @@ This project was largely inspired by Roman's [romanbican/roles](https://github.c
 - [Config File](#config-file)
 - [More Information](#more-information)
 - [License](#license)
-
-## Installation
-
-This package is very easy to set up. There are only couple of steps.
-
-### Composer
-
-Run this command inside your terminal to add the package into your project.
-
-	composer require httpoz/roles
-
-### Service Provider
-
-Add the package to your application service providers in `config/app.php` file.
-
-```php
-'providers' => [
-
-    /*
-     * Laravel Framework Service Providers...
-     */
-    Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
-    Illuminate\Auth\AuthServiceProvider::class,
-    ...
-
-    /**
-     * Third Party Service Providers...
-     */
-    HttpOz\Roles\RolesServiceProvider::class,
-
-],
-```
-
-### Config File And Migrations
-
-Publish the package config file and migrations to your application. Run this command inside your terminal.
-
-    php artisan vendor:publish --provider="HttpOz\Roles\RolesServiceProvider"
-
-And also run migrations.
-
-    php artisan migrate
-
-> This uses the default users table which is in Laravel. You should already have the migration file for the users table available and migrated.
-
-### HasRole Trait And Contract
-
-Include `HasRole` trait and also implement `HasRole` contract inside your `User` model.
-
-```php
-use HttpOz\Roles\Traits\HasRole;
-use HttpOz\Roles\Contracts\HasRole as HasRoleContract;
-
-class User extends Authenticatable implements HasRoleContract
-{
-    use Notifiable, HasRole;
-```
-
-And that's it!
 
 ## Usage
 
