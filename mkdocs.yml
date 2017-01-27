@@ -1,10 +1,16 @@
 site_name: Laravel Roles
 docs_dir: docs
-theme: readthedocs
-#theme_dir: 'docs/mkdocs-material'
+theme_dir: 'docs/mkdocs-material'
+repo_name: 'Http0z\Roles'
+repo_url: 'https://github.com/httpoz/roles'
 extra:
     palette:
         primary: 'red'
+    social:
+        - type: 'github'
+          link: 'https://github.com/httpoz'
+        - type: 'twitter'
+          link: 'https://twitter.com/httpoz'
 pages:
     - Home: 'index.md'
     - Getting Started:
@@ -17,3 +23,6 @@ pages:
         - 'Middleware': 'middleware.md'
         - 'Displaying Errors': 'displaying-errors.md'
         - 'Blade Syntax': 'blade-syntax.md'
+
+markdown_extensions:
+  - codehilite

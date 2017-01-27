@@ -13,7 +13,7 @@ For Laravel 5.3 users please use [Roles 1.4](https://github.com/httpoz/roles/tre
 Powerful package for handling roles in Laravel
 
 ## Documentation
-You can find the docs on [Read the docs](http://httpozroles.readthedocs.io/)
+You can find the [documentation here.](https://httpoz.github.io/roles/)
 
 #### History
 This project was largely inspired by Roman's [romanbican/roles](https://github.com/romanbican/roles/) Laravel package. However at the time Laravel 5.3 was released his package was not actively maintained. I have ommitted permissions in this package in favour of Laravel's [Authorization](https://laravel.com/docs/5.3/authorization). I intend to keep this package as simple and minimal as is possible.
