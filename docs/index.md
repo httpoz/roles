@@ -1,6 +1,4 @@
 # Roles for Laravel 5.4
-*** Notice
-For Laravel 5.3 users please use [Roles 1.4](https://github.com/httpoz/roles/tree/1.4)
 
 [![Build Status](https://travis-ci.org/httpoz/roles.svg)](https://travis-ci.org/httpoz/roles)
 [![Total Downloads](https://poser.pugx.org/httpoz/roles/d/total.svg)](https://packagist.org/packages/httpoz/roles)
@@ -12,16 +10,5 @@ For Laravel 5.3 users please use [Roles 1.4](https://github.com/httpoz/roles/tre
 
 Powerful package for handling roles in Laravel
 
-## Documentation
-You can find the docs on [Read the docs](http://httpozroles.readthedocs.io/)
-
 #### History
 This project was largely inspired by Roman's [romanbican/roles](https://github.com/romanbican/roles/) Laravel package. However at the time Laravel 5.3 was released his package was not actively maintained. I have ommitted permissions in this package in favour of Laravel's [Authorization](https://laravel.com/docs/5.3/authorization). I intend to keep this package as simple and minimal as is possible.
-
-## More Information
-
-For more information, please have a look at [HasRole](https://github.com/httpoz/roles/blob/master/src/HttpOz/Roles/Contracts/HasRole.php) contract.
-
-## License
-
-This package is free software distributed under the terms of the MIT license.

@@ -1,0 +1,18 @@
+site_name: Laravel Roles
+docs_dir: docs
+theme_dir: 'docs/mkdocs-material'
+extra:
+    palette:
+        primary: 'red'
+pages:
+    - Home: 'index.md'
+    - Getting Started:
+        - 'Installation': 'installation.md'
+        - 'Configuration': 'configuration.md'
+    - Core Concepts:
+        - 'Roles': 'roles.md'
+        - 'Groups': 'groups.md'
+    - The HTTP Layer:
+        - 'Middleware': 'middleware.md'
+        - 'Displaying Errors': 'displaying-errors.md'
+        - 'Blade Syntax': 'blade-syntax.md'
