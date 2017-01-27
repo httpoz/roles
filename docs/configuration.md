@@ -1,4 +1,4 @@
-### Register the Roles Service Provider
+## Register the Roles Service Provider
 
 Add the package to your application service providers in `config/app.php` file.
 
@@ -21,7 +21,7 @@ Add the package to your application service providers in `config/app.php` file.
 ```
 
 
-### Publish Config File And Migrations
+## Publish Config File And Migrations
 
 Publish the package config file and migrations to your application. Run this command inside your terminal.
 
@@ -34,7 +34,7 @@ And also run migrations.
 > This uses the default users table which is in Laravel. You should already have the migration file for the users table available and migrated.
 
 
-### Enable HasRole Trait And Contract
+## Enable HasRole Trait And Contract
 
 Include `HasRole` trait and also implement `HasRole` contract inside your `User` model.
 
@@ -48,3 +48,7 @@ class User extends Authenticatable implements HasRoleContract
 ```
 
 And that's it!
+
+## Config File
+
+You can change connection for models, slug separator, models path and there is also a handy pretend feature. Have a look at config file for more information.

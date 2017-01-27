@@ -9,8 +9,10 @@ pages:
     - Getting Started:
         - 'Installation': 'installation.md'
         - 'Configuration': 'configuration.md'
-    - Concepts:
+    - Core Concepts:
         - 'Roles': 'roles.md'
-        - 'Permits': 'permits.md'
-    - Views:
+        - 'Groups': 'groups.md'
+    - The HTTP Layer:
+        - 'Middleware': 'middleware.md'
+        - 'Displaying Errors': 'displaying-errors.md'
         - 'Blade Syntax': 'blade-syntax.md'
