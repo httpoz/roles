@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-01-27</lastmod>
+     <lastmod>2017-01-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,13 +13,13 @@
         
     <url>
      <loc>/installation/</loc>
-     <lastmod>2017-01-27</lastmod>
+     <lastmod>2017-01-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/configuration/</loc>
-     <lastmod>2017-01-27</lastmod>
+     <lastmod>2017-01-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -29,13 +29,13 @@
         
     <url>
      <loc>/roles/</loc>
-     <lastmod>2017-01-27</lastmod>
+     <lastmod>2017-01-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/groups/</loc>
-     <lastmod>2017-01-27</lastmod>
+     <lastmod>2017-01-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -45,19 +45,19 @@
         
     <url>
      <loc>/middleware/</loc>
-     <lastmod>2017-01-27</lastmod>
+     <lastmod>2017-01-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/displaying-errors/</loc>
-     <lastmod>2017-01-27</lastmod>
+     <lastmod>2017-01-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/blade-syntax/</loc>
-     <lastmod>2017-01-27</lastmod>
+     <lastmod>2017-01-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
