@@ -230,13 +230,56 @@
       
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Core Concepts
+      Roles
     </label>
     <nav class="md-nav" data-md-component="collapsible">
       <label class="md-nav__title" for="nav-3">
+        Roles
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../roles/creating-roles/" title="Creating Roles" class="md-nav__link">
+        Creating Roles
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../roles/assigning-roles/" title="Assigning Roles" class="md-nav__link">
+        Assigning Roles
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Core Concepts
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-4">
         Core Concepts
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -283,13 +326,13 @@
       
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-5">
       The HTTP Layer
     </label>
     <nav class="md-nav" data-md-component="collapsible">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-5">
         The HTTP Layer
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -362,9 +405,9 @@
                   <h1>Groups</h1>
                 
                 <p>When you are creating roles, there is optional parameter <code>group</code>. It is set as <code>default</code> by default, but you can overwrite it and then you can do something like this:</p>
-<div class="codehilite"><pre><span></span><span class="x">if ($user-&gt;group() == &#39;application.managers&#39;) {</span>
-<span class="x">    //</span>
-<span class="x">}</span>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">group</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;application.managers&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//</span>
+<span class="p">}</span>
 </pre></div>
 
 

@@ -230,13 +230,56 @@
       
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Core Concepts
+      Roles
     </label>
     <nav class="md-nav" data-md-component="collapsible">
       <label class="md-nav__title" for="nav-3">
+        Roles
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="creating-roles/" title="Creating Roles" class="md-nav__link">
+        Creating Roles
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="assigning-roles/" title="Assigning Roles" class="md-nav__link">
+        Assigning Roles
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Core Concepts
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-4">
         Core Concepts
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -264,13 +307,6 @@
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#creating-roles" title="Creating Roles" class="md-nav__link">
-    Creating Roles
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#attaching-syncing-and-detaching-roles" title="Attaching, Syncing And Detaching Roles" class="md-nav__link">
@@ -320,13 +356,13 @@
       
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-5">
       The HTTP Layer
     </label>
     <nav class="md-nav" data-md-component="collapsible">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-5">
         The HTTP Layer
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -389,13 +425,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-roles" title="Creating Roles" class="md-nav__link">
-    Creating Roles
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#attaching-syncing-and-detaching-roles" title="Attaching, Syncing And Detaching Roles" class="md-nav__link">
     Attaching, Syncing And Detaching Roles
   </a>
@@ -431,92 +460,74 @@
                 
                   <h1>Roles</h1>
                 
-                <h2 id="creating-roles">Creating Roles</h2>
-<p>The common practice for creating roles would be to create a seed file and place your role definitions in that file. In the example below we are defining two roles <code>Admin</code> and <code>Forum Moderator</code> that will be created when we run <code>php artisan db:seed</code>.</p>
-<div class="codehilite"><pre><span></span><span class="x">use HttpOz\Roles\Models\Role;</span>
-
-<span class="x">$adminRole = Role::create([</span>
-<span class="x">    &#39;name&#39; =&gt; &#39;Admin&#39;,</span>
-<span class="x">    &#39;slug&#39; =&gt; &#39;admin&#39;,</span>
-<span class="x">    &#39;description&#39; =&gt; &#39;&#39;, // optional</span>
-<span class="x">    &#39;group&#39; =&gt; &#39;default&#39;, // optional, set as &#39;default&#39; by default</span>
-<span class="x">]);</span>
-
-<span class="x">$moderatorRole = Role::create([</span>
-<span class="x">    &#39;name&#39; =&gt; &#39;Forum Moderator&#39;,</span>
-<span class="x">    &#39;slug&#39; =&gt; &#39;forum.moderator&#39;,</span>
-<span class="x">]);</span>
-</pre></div>
-
-
-<blockquote>
-<p>Because of <code>Sluggable</code> trait, if you make a mistake and for example leave a space in slug parameter, it'll be replaced with a dot automatically, because of <code>str_slug</code> function.</p>
-</blockquote>
-<h2 id="attaching-syncing-and-detaching-roles">Attaching, Syncing And Detaching Roles</h2>
+                <h2 id="attaching-syncing-and-detaching-roles">Attaching, Syncing And Detaching Roles</h2>
 <p>It's really simple. You fetch a user from database and call <code>attachRole</code> method. There is <code>BelongsToMany</code> relationship between <code>User</code> and <code>Role</code> model.
 Learn about <a href="https://laravel.com/docs/5.3/eloquent-relationships#updating-many-to-many-relationships">Many To Many Relationships</a></p>
-<div class="codehilite"><pre><span></span><span class="x">use App\User;</span>
+<div class="codehilite"><pre><span></span><span class="k">use</span> <span class="nx">App\User</span><span class="p">;</span>
 
-<span class="x">$user = User::find($id);</span>
+<span class="nv">$user</span> <span class="o">=</span> <span class="nx">User</span><span class="o">::</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
 
-<span class="x">$user-&gt;attachRole($adminRole); // you can pass whole object, or just an id</span>
-<span class="x">$user-&gt;detachRole($adminRole); // in case you want to detach role</span>
-<span class="x">$user-&gt;detachAllRoles(); // in case you want to detach all roles</span>
-<span class="x">$user-&gt;syncRoles($roles); // you can pass Eloquent collection, or just an array of ids</span>
+<span class="nv">$user</span><span class="o">-&gt;</span><span class="na">attachRole</span><span class="p">(</span><span class="nv">$adminRole</span><span class="p">);</span> <span class="c1">// you can pass whole object, or just an id</span>
+<span class="nv">$user</span><span class="o">-&gt;</span><span class="na">detachRole</span><span class="p">(</span><span class="nv">$adminRole</span><span class="p">);</span> <span class="c1">// in case you want to detach role</span>
+<span class="nv">$user</span><span class="o">-&gt;</span><span class="na">detachAllRoles</span><span class="p">();</span> <span class="c1">// in case you want to detach all roles</span>
+<span class="nv">$user</span><span class="o">-&gt;</span><span class="na">syncRoles</span><span class="p">(</span><span class="nv">$roles</span><span class="p">);</span> <span class="c1">// you can pass Eloquent collection, or just an array of ids</span>
 </pre></div>
 
 
 <h2 id="checking-for-roles">Checking For Roles</h2>
 <p>You can now check if the user has required role.</p>
-<div class="codehilite"><pre><span></span><span class="x">if ($user-&gt;isRole(&#39;admin&#39;)) { // you can pass an id or slug</span>
-<span class="x">    // or alternatively $user-&gt;hasRole(&#39;admin&#39;)</span>
-<span class="x">}</span>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">isRole</span><span class="p">(</span><span class="s1">&#39;admin&#39;</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// you can pass an id or slug</span>
+    <span class="c1">// or alternatively $user-&gt;hasRole(&#39;admin&#39;)</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p>You can also do this:</p>
-<div class="codehilite"><pre><span></span><span class="x">if ($user-&gt;isAdmin()) {</span>
-<span class="x">    //</span>
-<span class="x">}</span>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">isAdmin</span><span class="p">())</span> <span class="p">{</span>
+    <span class="c1">//</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <p>And of course, there is a way to check for multiple roles:</p>
-<div class="codehilite"><pre><span></span><span class="x">if ($user-&gt;isRole(&#39;admin|moderator&#39;)) {</span>
-<span class="x">    /*</span>
-<span class="x">    | Or alternatively:</span>
-<span class="x">    | $user-&gt;isRole(&#39;admin, moderator&#39;), $user-&gt;isRole([&#39;admin&#39;, &#39;moderator&#39;]),</span>
-<span class="x">    | $user-&gt;isOne(&#39;admin|moderator&#39;), $user-&gt;isOne(&#39;admin, moderator&#39;), $user-&gt;isOne([&#39;admin&#39;, &#39;moderator&#39;])</span>
-<span class="x">    */</span>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">isRole</span><span class="p">(</span><span class="s1">&#39;admin|moderator&#39;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="cm">/*</span>
+<span class="cm">    | Or alternatively:</span>
+<span class="cm">    | $user-&gt;isRole(&#39;admin, moderator&#39;), $user-&gt;isRole([&#39;admin&#39;, &#39;moderator&#39;]),</span>
+<span class="cm">    | $user-&gt;isOne(&#39;admin|moderator&#39;), $user-&gt;isOne(&#39;admin, moderator&#39;), $user-&gt;isOne([&#39;admin&#39;, &#39;moderator&#39;])</span>
+<span class="cm">    */</span>
 
-<span class="x">    // if user has at least one role</span>
-<span class="x">}</span>
+    <span class="c1">// if user has at least one role</span>
+<span class="p">}</span>
 
-<span class="x">if ($user-&gt;isRole(&#39;admin|moderator&#39;, true)) {</span>
-<span class="x">    /*</span>
-<span class="x">    | Or alternatively:</span>
-<span class="x">    | $user-&gt;isRole(&#39;admin, moderator&#39;, true), $user-&gt;isRole([&#39;admin&#39;, &#39;moderator&#39;], true),</span>
-<span class="x">    | $user-&gt;isAll(&#39;admin|moderator&#39;), $user-&gt;isAll(&#39;admin, moderator&#39;), $user-&gt;isAll([&#39;admin&#39;, &#39;moderator&#39;])</span>
-<span class="x">    */</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">isRole</span><span class="p">(</span><span class="s1">&#39;admin|moderator&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">))</span> <span class="p">{</span>
+    <span class="cm">/*</span>
+<span class="cm">    | Or alternatively:</span>
+<span class="cm">    | $user-&gt;isRole(&#39;admin, moderator&#39;, true), $user-&gt;isRole([&#39;admin&#39;, &#39;moderator&#39;], true),</span>
+<span class="cm">    | $user-&gt;isAll(&#39;admin|moderator&#39;), $user-&gt;isAll(&#39;admin, moderator&#39;), $user-&gt;isAll([&#39;admin&#39;, &#39;moderator&#39;])</span>
+<span class="cm">    */</span>
 
-<span class="x">    // if user has all roles</span>
-<span class="x">}</span>
+    <span class="c1">// if user has all roles</span>
+<span class="p">}</span>
 </pre></div>
 
 
 <h2 id="find-users-by-their-role">Find users by their role</h2>
 <p>There are multiple ways to get a list of users by their given role.</p>
 <p><strong>Using the role's id</strong>
- <code>php
- $admins = Role::find(1)-&gt;users;</code></p>
+ <div class="codehilite"><pre><span></span><span class="nv">$admins</span> <span class="o">=</span> <span class="nx">Role</span><span class="o">::</span><span class="na">find</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">users</span><span class="p">;</span>
+</pre></div>
+</p>
 <p><strong>Using the role's slug</strong>
- <code>php
- $adminRole = Role::where('slug', 'admin')-&gt;first();
- $admins = $role-&gt;users;</code>
+ <div class="codehilite"><pre><span></span><span class="nv">$adminRole</span> <span class="o">=</span> <span class="nx">Role</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;admin&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+<span class="nv">$admins</span> <span class="o">=</span> <span class="nv">$role</span><span class="o">-&gt;</span><span class="na">users</span><span class="p">;</span>
+</pre></div>
+
  <strong>Using the role's group</strong>
- <code>php
- $adminRole = Role::where('group', 'application.managers')-&gt;first();
- $admins = $role-&gt;users;</code></p>
+ <div class="codehilite"><pre><span></span><span class="nv">$adminRole</span> <span class="o">=</span> <span class="nx">Role</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;group&#39;</span><span class="p">,</span> <span class="s1">&#39;application.managers&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+<span class="nv">$admins</span> <span class="o">=</span> <span class="nv">$role</span><span class="o">-&gt;</span><span class="na">users</span><span class="p">;</span>
+</pre></div>
+</p>
               
             </article>
           </div>
@@ -529,7 +540,7 @@ Learn about <a href="https://laravel.com/docs/5.3/eloquent-relationships#updatin
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../configuration/" title="Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="assigning-roles/" title="Assigning Roles" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -538,7 +549,7 @@ Learn about <a href="https://laravel.com/docs/5.3/eloquent-relationships#updatin
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Configuration
+                Assigning Roles
               </span>
             </div>
           </a>

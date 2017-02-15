@@ -233,10 +233,53 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Core Concepts
+      Roles
     </label>
     <nav class="md-nav" data-md-component="collapsible">
       <label class="md-nav__title" for="nav-3">
+        Roles
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../roles/creating-roles/" title="Creating Roles" class="md-nav__link">
+        Creating Roles
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../roles/assigning-roles/" title="Assigning Roles" class="md-nav__link">
+        Assigning Roles
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Core Concepts
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-4">
         Core Concepts
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -273,13 +316,13 @@
       
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-5">
       The HTTP Layer
     </label>
     <nav class="md-nav" data-md-component="collapsible">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-5">
         The HTTP Layer
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -362,21 +405,21 @@
                   <h1>Displaying Errors</h1>
                 
                 <p>Extending from the above, you can control the error page that your application users see when they try to open a page their role is not allowed to. This package already has a view bundled with it that should have been published to <code>resources/views/vendor/roles/error.blade.php</code> when you published the package. Simply add the below condition inside your <code>app\Exceptions\Handler.php</code>'s render function. Feel free to point to another view of your choice.</p>
-<div class="codehilite"><pre><span></span><span class="x">/**</span>
-<span class="x">     * Render an exception into an HTTP response.</span>
-<span class="x">     *</span>
-<span class="x">     * @param  \Illuminate\Http\Request  $request</span>
-<span class="x">     * @param  \Exception  $exception</span>
-<span class="x">     * @return \Illuminate\Http\Response</span>
-<span class="x">     */</span>
-<span class="x">    public function render($request, Exception $exception)</span>
-<span class="x">    {</span>
-<span class="x">        if ($exception instanceof \HttpOz\Roles\Exceptions\RoleDeniedException || $exception instanceof \HttpOz\Roles\Exceptions\GroupDeniedException) {</span>
-<span class="x">            return response()-&gt;view(&#39;vendor.roles.error&#39;, compact(&#39;exception&#39;), 403);</span>
-<span class="x">        }</span>
+<div class="codehilite"><pre><span></span><span class="sd">/**</span>
+<span class="sd">     * Render an exception into an HTTP response.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param  \Illuminate\Http\Request  $request</span>
+<span class="sd">     * @param  \Exception  $exception</span>
+<span class="sd">     * @return \Illuminate\Http\Response</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">render</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nx">Exception</span> <span class="nv">$exception</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$exception</span> <span class="nx">instanceof</span> <span class="nx">\HttpOz\Roles\Exceptions\RoleDeniedException</span> <span class="o">||</span> <span class="nv">$exception</span> <span class="nx">instanceof</span> <span class="nx">\HttpOz\Roles\Exceptions\GroupDeniedException</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;vendor.roles.error&#39;</span><span class="p">,</span> <span class="nb">compact</span><span class="p">(</span><span class="s1">&#39;exception&#39;</span><span class="p">),</span> <span class="mi">403</span><span class="p">);</span>
+        <span class="p">}</span>
 
-<span class="x">        return parent::render($request, $exception);</span>
-<span class="x">    }</span>
+        <span class="k">return</span> <span class="k">parent</span><span class="o">::</span><span class="na">render</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nv">$exception</span><span class="p">);</span>
+    <span class="p">}</span>
 </pre></div>
               
             </article>

@@ -280,10 +280,53 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Core Concepts
+      Roles
     </label>
     <nav class="md-nav" data-md-component="collapsible">
       <label class="md-nav__title" for="nav-3">
+        Roles
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../roles/creating-roles/" title="Creating Roles" class="md-nav__link">
+        Creating Roles
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../roles/assigning-roles/" title="Assigning Roles" class="md-nav__link">
+        Assigning Roles
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Core Concepts
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-4">
         Core Concepts
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -320,13 +363,13 @@
       
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-5">
       The HTTP Layer
     </label>
     <nav class="md-nav" data-md-component="collapsible">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-5">
         The HTTP Layer
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -433,21 +476,21 @@
                 
                 <h2 id="register-the-roles-service-provider">Register the Roles Service Provider</h2>
 <p>Add the package to your application service providers in <code>config/app.php</code> file.</p>
-<div class="codehilite"><pre><span></span><span class="x">&#39;providers&#39; =&gt; [</span>
+<div class="codehilite"><pre><span></span><span class="s1">&#39;providers&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
 
-<span class="x">    /*</span>
-<span class="x">     * Laravel Framework Service Providers...</span>
-<span class="x">     */</span>
-<span class="x">    Illuminate\Foundation\Providers\ArtisanServiceProvider::class,</span>
-<span class="x">    Illuminate\Auth\AuthServiceProvider::class,</span>
-<span class="x">    ...</span>
+    <span class="cm">/*</span>
+<span class="cm">     * Laravel Framework Service Providers...</span>
+<span class="cm">     */</span>
+    <span class="nx">Illuminate\Foundation\Providers\ArtisanServiceProvider</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+    <span class="nx">Illuminate\Auth\AuthServiceProvider</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+    <span class="o">...</span>
 
-<span class="x">    /**</span>
-<span class="x">     * Package Service Providers...</span>
-<span class="x">     */</span>
-<span class="x">    HttpOz\Roles\RolesServiceProvider::class,</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Package Service Providers...</span>
+<span class="sd">     */</span>
+    <span class="nx">HttpOz\Roles\RolesServiceProvider</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
 
-<span class="x">],</span>
+<span class="p">],</span>
 </pre></div>
 
 
@@ -467,12 +510,12 @@
 </blockquote>
 <h2 id="enable-hasrole-trait-and-contract">Enable HasRole Trait And Contract</h2>
 <p>Include <code>HasRole</code> trait and also implement <code>HasRole</code> contract inside your <code>User</code> model.</p>
-<div class="codehilite"><pre><span></span><span class="x">use HttpOz\Roles\Traits\HasRole;</span>
-<span class="x">use HttpOz\Roles\Contracts\HasRole as HasRoleContract;</span>
+<div class="codehilite"><pre><span></span><span class="k">use</span> <span class="nx">HttpOz\Roles\Traits\HasRole</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">HttpOz\Roles\Contracts\HasRole</span> <span class="k">as</span> <span class="nx">HasRoleContract</span><span class="p">;</span>
 
-<span class="x">class User extends Authenticatable implements HasRoleContract</span>
-<span class="x">{</span>
-<span class="x">    use Notifiable, HasRole;</span>
+<span class="k">class</span> <span class="nc">User</span> <span class="k">extends</span> <span class="nx">Authenticatable</span> <span class="k">implements</span> <span class="nx">HasRoleContract</span>
+<span class="p">{</span>
+    <span class="k">use</span> <span class="nx">Notifiable</span><span class="p">,</span> <span class="nx">HasRole</span><span class="p">;</span>
 </pre></div>
 
 
@@ -506,13 +549,13 @@
           </a>
         
         
-          <a href="../roles/" title="Roles" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../roles/creating-roles/" title="Creating Roles" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Roles
+                Creating Roles
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -233,10 +233,53 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Core Concepts
+      Roles
     </label>
     <nav class="md-nav" data-md-component="collapsible">
       <label class="md-nav__title" for="nav-3">
+        Roles
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../roles/creating-roles/" title="Creating Roles" class="md-nav__link">
+        Creating Roles
+      </a>
+    
+  </li>
+
+        
+          
+          
+  <li class="md-nav__item">
+    
+      <a href="../roles/assigning-roles/" title="Assigning Roles" class="md-nav__link">
+        Assigning Roles
+      </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Core Concepts
+    </label>
+    <nav class="md-nav" data-md-component="collapsible">
+      <label class="md-nav__title" for="nav-4">
         Core Concepts
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -273,13 +316,13 @@
       
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-5">
       The HTTP Layer
     </label>
     <nav class="md-nav" data-md-component="collapsible">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-5">
         The HTTP Layer
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -362,19 +405,19 @@
                   <h1>Blade Syntax</h1>
                 
                 <p>There are two Blade extensions that are basically a replacement for classic if statements.</p>
-<div class="codehilite"><pre><span></span><span class="x">@role(&#39;admin&#39;) // @if(Auth::check() &amp;&amp; Auth::user()-&gt;isRole(&#39;admin&#39;))</span>
-<span class="x">    // user is admin</span>
-<span class="x">@endrole</span>
+<div class="codehilite"><pre><span></span><span class="o">@</span><span class="nx">role</span><span class="p">(</span><span class="s1">&#39;admin&#39;</span><span class="p">)</span> <span class="c1">// @if(Auth::check() &amp;&amp; Auth::user()-&gt;isRole(&#39;admin&#39;))</span>
+    <span class="c1">// user is admin</span>
+<span class="o">@</span><span class="nx">endrole</span>
 
-<span class="x">@group(&#39;application.managers&#39;) // @if(Auth::check() &amp;&amp; Auth::user()-&gt;group() == &#39;application.managers&#39;)</span>
-<span class="x">    // user belongs to &#39;application.managers&#39; group</span>
-<span class="x">@endgroup</span>
+<span class="o">@</span><span class="nx">group</span><span class="p">(</span><span class="s1">&#39;application.managers&#39;</span><span class="p">)</span> <span class="c1">// @if(Auth::check() &amp;&amp; Auth::user()-&gt;group() == &#39;application.managers&#39;)</span>
+    <span class="c1">// user belongs to &#39;application.managers&#39; group</span>
+<span class="o">@</span><span class="nx">endgroup</span>
 
-<span class="x">@role(&#39;admin|moderator&#39;, &#39;all&#39;) // @if(Auth::check() &amp;&amp; Auth::user()-&gt;isRole(&#39;admin|moderator&#39;, &#39;all&#39;))</span>
-<span class="x">    // user is admin and also moderator</span>
-<span class="x">@else</span>
-<span class="x">    // something else</span>
-<span class="x">@endrole</span>
+<span class="o">@</span><span class="nx">role</span><span class="p">(</span><span class="s1">&#39;admin|moderator&#39;</span><span class="p">,</span> <span class="s1">&#39;all&#39;</span><span class="p">)</span> <span class="c1">// @if(Auth::check() &amp;&amp; Auth::user()-&gt;isRole(&#39;admin|moderator&#39;, &#39;all&#39;))</span>
+    <span class="c1">// user is admin and also moderator</span>
+<span class="o">@</span><span class="k">else</span>
+    <span class="c1">// something else</span>
+<span class="o">@</span><span class="nx">endrole</span>
 </pre></div>
               
             </article>
