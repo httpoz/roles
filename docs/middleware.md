@@ -31,6 +31,6 @@ $router->get('/example', [
 ]);
 ```
 
-It throws `\HttpOz\Roles\Exceptions\RoleDeniedException` or `\HttpOz\Roles\Exceptions\GoupDeniedException` exceptions if it goes wrong.
+It throws `\HttpOz\Roles\Exceptions\RoleDeniedException` or `\HttpOz\Roles\Exceptions\GroupDeniedException` exceptions if it goes wrong.
 
 You can catch these exceptions inside `app/Exceptions/Handler.php` file and do whatever you want, example below.
