@@ -88,10 +88,10 @@ if ($user->isRole('admin|moderator', true)) {
  **Using the role's slug**
  ```php
  $adminRole = Role::where('slug', 'admin')->first();
- $admins = $role->users;
+ $admins = $adminRole->users;
  ```
  **Using the role's group**
  ```php
  $adminRole = Role::where('group', 'application.managers')->first();
- $admins = $role->users;
+ $admins = $adminRole->users;
  ```
