@@ -2,8 +2,9 @@
 
 namespace HttpOz\Roles\Exceptions;
 
+use Exception;
 
-class RoleDeniedException extends AccessDeniedException
+class RoleDeniedException extends Exception
 {
     /**
      * Create a new role denied exception instance.
