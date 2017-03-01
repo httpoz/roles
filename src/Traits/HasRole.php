@@ -2,9 +2,7 @@
 
 namespace HttpOz\Roles\Traits;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use InvalidArgumentException;
 
 
 trait HasRole
