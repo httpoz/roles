@@ -1,24 +1,3 @@
-## Creating Roles
-The common practice for creating roles would be to create a seed file and place your role definitions in that file. In the example below we are defining two roles `Admin` and `Forum Moderator` that will be created when we run `php artisan db:seed`.
-
-```php
-use HttpOz\Roles\Models\Role;
-
-$adminRole = Role::create([
-    'name' => 'Admin',
-    'slug' => 'admin',
-    'description' => '', // optional
-    'group' => 'default', // optional, set as 'default' by default
-]);
-
-$moderatorRole = Role::create([
-    'name' => 'Forum Moderator',
-    'slug' => 'forum.moderator',
-]);
-```
-
-> Because of `Sluggable` trait, if you make a mistake and for example leave a space in slug parameter, it'll be replaced with a dot automatically, because of `str_slug` function.
-
 ## Attaching, Syncing And Detaching Roles
 
 It's really simple. You fetch a user from database and call `attachRole` method. There is `BelongsToMany` relationship between `User` and `Role` model.
