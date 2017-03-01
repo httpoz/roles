@@ -15,6 +15,4 @@ class RoleDeniedException extends Exception
     {
         $this->message = sprintf("You don't have a required ['%s'] role.", $role);
     }
-
-    // @todo: render custom view or something
 }
