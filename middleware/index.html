@@ -9,9 +9,9 @@
       
       
       
-        <link rel="shortcut icon" href="../assets/images/favicon.ico">
+        <link rel="shortcut icon" href="../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs+mkdocs-material#1.0.3">
+      <meta name="generator" content="mkdocs-0.16.1, mkdocs-material-1.2.0">
     
     
       
@@ -19,7 +19,13 @@
       
     
     
-      <script src="../assets/javascripts/modernizr-facb31f4a3.js"></script>
+      <script src="../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application-e17eeafcbc.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-892b79c5c5.palette.css">
+      
     
     
       
@@ -31,12 +37,6 @@
       
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
-    
-      <link rel="stylesheet" href="../assets/stylesheets/application-f3ab63f78a.css">
-      
-        <link rel="stylesheet" href="../assets/stylesheets/application-02ce7adcc2.palette.css">
-      
-      
     
     
   </head>
@@ -62,9 +62,10 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href=".." title="Laravel Roles" class=" md-icon md-icon--home  md-header-nav__button">
-          
-        </a>
+        
+          <a href=".." title="Laravel Roles" class="md-icon md-icon--home md-header-nav__button">
+          </a>
+        
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
@@ -91,7 +92,7 @@
   <div class="md-search__overlay"></div>
   <div class="md-search__inner">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
       <label class="md-icon md-search__icon" for="search"></label>
     </form>
     <div class="md-search__output">
@@ -104,9 +105,9 @@
         
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
+        <div class="md-header-nav__source">
+          
             
-              
 
 
   
@@ -125,14 +126,16 @@
     </div>
   </a>
 
-            
-          </div>
+          
+        </div>
       </div>
     </div>
   </nav>
 </header>
     
     <div class="md-container">
+      
+      
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
@@ -140,11 +143,11 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="drawer">
-    <i class=" md-icon md-icon--home  md-nav__button">
-      
-    </i>
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
     Laravel Roles
   </label>
   
@@ -174,17 +177,21 @@
     
       
       
+      
+
+
   <li class="md-nav__item">
-    
-      <a href=".." title="Home" class="md-nav__link">
-        Home
-      </a>
-    
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
   </li>
 
     
       
       
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
@@ -192,7 +199,7 @@
     <label class="md-nav__link" for="nav-2">
       Getting Started
     </label>
-    <nav class="md-nav" data-md-component="collapsible">
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
         Getting Started
       </label>
@@ -201,23 +208,25 @@
         
           
           
+          
+
+
   <li class="md-nav__item">
-    
-      <a href="../installation/" title="Installation" class="md-nav__link">
-        Installation
-      </a>
-    
+    <a href="../installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
   </li>
 
         
           
           
+          
+
+
   <li class="md-nav__item">
-    
-      <a href="../configuration/" title="Configuration" class="md-nav__link">
-        Configuration
-      </a>
-    
+    <a href="../configuration/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
   </li>
 
         
@@ -228,6 +237,9 @@
     
       
       
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
@@ -235,7 +247,7 @@
     <label class="md-nav__link" for="nav-3">
       Roles
     </label>
-    <nav class="md-nav" data-md-component="collapsible">
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
         Roles
       </label>
@@ -244,23 +256,37 @@
         
           
           
+          
+
+
   <li class="md-nav__item">
-    
-      <a href="../roles/creating-roles/" title="Creating Roles" class="md-nav__link">
-        Creating Roles
-      </a>
-    
+    <a href="../roles/creating-roles/" title="Creating Roles" class="md-nav__link">
+      Creating Roles
+    </a>
   </li>
 
         
           
           
+          
+
+
   <li class="md-nav__item">
-    
-      <a href="../roles/assigning-roles/" title="Assigning Roles" class="md-nav__link">
-        Assigning Roles
-      </a>
-    
+    <a href="../roles/assigning-roles/" title="Assigning Roles" class="md-nav__link">
+      Assigning Roles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../roles/querying-roles/" title="Querying Roles" class="md-nav__link">
+      Querying Roles
+    </a>
   </li>
 
         
@@ -271,6 +297,9 @@
     
       
       
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
@@ -278,7 +307,7 @@
     <label class="md-nav__link" for="nav-4">
       Core Concepts
     </label>
-    <nav class="md-nav" data-md-component="collapsible">
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
         Core Concepts
       </label>
@@ -287,23 +316,25 @@
         
           
           
+          
+
+
   <li class="md-nav__item">
-    
-      <a href="../roles/" title="Roles" class="md-nav__link">
-        Roles
-      </a>
-    
+    <a href="../roles/" title="Roles" class="md-nav__link">
+      Roles
+    </a>
   </li>
 
         
           
           
+          
+
+
   <li class="md-nav__item">
-    
-      <a href="../groups/" title="Groups" class="md-nav__link">
-        Groups
-      </a>
-    
+    <a href="../groups/" title="Groups" class="md-nav__link">
+      Groups
+    </a>
   </li>
 
         
@@ -314,14 +345,19 @@
     
       
       
-  <li class="md-nav__item md-nav__item--nested">
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       The HTTP Layer
     </label>
-    <nav class="md-nav" data-md-component="collapsible">
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-5">
         The HTTP Layer
       </label>
@@ -330,7 +366,12 @@
         
           
           
-  <li class="md-nav__item">
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
@@ -339,35 +380,30 @@
       Middleware
     </a>
     
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-</nav>
-    
   </li>
 
         
           
           
+          
+
+
   <li class="md-nav__item">
-    
-      <a href="../displaying-errors/" title="Displaying Errors" class="md-nav__link">
-        Displaying Errors
-      </a>
-    
+    <a href="../displaying-errors/" title="Displaying Errors" class="md-nav__link">
+      Displaying Errors
+    </a>
   </li>
 
         
           
           
+          
+
+
   <li class="md-nav__item">
-    
-      <a href="../blade-syntax/" title="Blade Syntax" class="md-nav__link">
-        Blade Syntax
-      </a>
-    
+    <a href="../blade-syntax/" title="Blade Syntax" class="md-nav__link">
+      Blade Syntax
+    </a>
   </li>
 
         
@@ -435,8 +471,9 @@
 </pre></div>
 
 
-<p>It throws <code>\HttpOz\Roles\Exceptions\RoleDeniedException</code> or <code>\HttpOz\Roles\Exceptions\GoupDeniedException</code> exceptions if it goes wrong.</p>
+<p>It throws <code>\HttpOz\Roles\Exceptions\RoleDeniedException</code> or <code>\HttpOz\Roles\Exceptions\GroupDeniedException</code> exceptions if it goes wrong.</p>
 <p>You can catch these exceptions inside <code>app/Exceptions/Handler.php</code> file and do whatever you want, example below.</p>
+              
               
             </article>
           </div>
@@ -510,8 +547,8 @@
       
     </div>
     
-      <script src="../assets/javascripts/application-2afe21e0b2.js"></script>
-      <script>var config={url:{base:".."}},app=new Application(config);app.initialize()</script>
+      <script src="../assets/javascripts/application-30ac6a1727.js"></script>
+      <script>app.initialize({url:{base:".."}})</script>
       
     
     
