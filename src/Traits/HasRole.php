@@ -141,13 +141,24 @@ trait HasRole
     }
 
     /**
-     * Get role level of a user.
+     * Get role group of a user.
      *
      * @return int
      */
     public function group()
     {
         return ($role = $this->getRoles()->sortBy('group')->first()) ? $role->group : 'default';
+    }
+
+    /**
+     * Check if user belongs to a given group
+     *
+     * @param string $group
+     * @return boolean
+     */
+    public function inGroup($group)
+    {
+        return ($this->getRoles()->where('group', 'LIKE', $group)->first() ? true : false);
     }
 
     /**

@@ -20,6 +20,7 @@ pages:
     - Roles:
         - 'Creating Roles': 'roles/creating-roles.md'
         - 'Assigning Roles': 'roles/assigning-roles.md'
+        - 'Querying Roles': 'roles/querying-roles.md'
     - Core Concepts:
         - 'Roles': 'roles.md'
         - 'Groups': 'groups.md'
