@@ -112,7 +112,7 @@
         },
         {
             "location": "/groups/",
-            "text": "When you are creating roles, there is optional parameter \ngroup\n. It is set as \ndefault\n by default, but you can overwrite it and then you can do something like this:\n\n\nif\n \n(\n$user\n->\ngroup\n()\n \n==\n \n'application.managers'\n)\n \n{\n\n    \n//\n\n\n}\n\n\n\n\n\n\n\n\nIf user has multiple roles, method \ngroup\n returns the first one in alphabetical order (a better implementation of this will be explored).\n\n\n\n\nGroup\n is intended to collectively organise and assign permissions (Laravel's built in authorization feature) to a role group that can be shared by multiple roles (examples and implementation to be added to documentation in future).",
+            "text": "When you are creating roles, there is optional parameter \ngroup\n. It is set as \ndefault\n by default, but you can overwrite it and then you can do something like this:\n\n\nif\n \n(\n$user\n->\ngroup\n()\n \n==\n \n'application.managers'\n)\n \n{\n\n    \n//\n\n\n}\n\n\n\nif\n \n(\n$user\n->\ninGroup\n(\n'application.managers'\n))\n \n{\n\n    \n// if true do something\n\n\n}\n\n\n\n\n\n\n\n\nIf user has multiple roles, method \ngroup\n returns the first one in alphabetical order (a better implementation of this will be explored).\n\n\n\n\nGroup\n is intended to collectively organise and assign permissions (Laravel's built in authorization feature) to a role group that can be shared by multiple roles (examples and implementation to be added to documentation in future).",
             "title": "Groups"
         },
         {

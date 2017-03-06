@@ -444,6 +444,10 @@
 <div class="codehilite"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">group</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;application.managers&#39;</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">//</span>
 <span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">inGroup</span><span class="p">(</span><span class="s1">&#39;application.managers&#39;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// if true do something</span>
+<span class="p">}</span>
 </pre></div>
 
 
