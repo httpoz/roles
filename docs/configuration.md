@@ -22,6 +22,9 @@ Add the package to your application service providers in `config/app.php` file.
 
 
 ## Publish Config File And Migrations
+Optimize Application
+
+    php artisan optimize
 
 Publish the package config file and migrations to your application. Run this command inside your terminal.
 
