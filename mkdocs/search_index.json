@@ -101,14 +101,24 @@
             "title": "Find users by their role"
         },
         {
-            "location": "/roles/",
-            "text": "Attaching, Syncing And Detaching Roles\n\n\nIt's really simple. You fetch a user from database and call \nattachRole\n method. There is \nBelongsToMany\n relationship between \nUser\n and \nRole\n model.\nLearn about \nMany To Many Relationships\n\n\nuse\n \nApp\\User\n;\n\n\n\n$user\n \n=\n \nUser\n::\nfind\n(\n$id\n);\n\n\n\n$user\n->\nattachRole\n(\n$adminRole\n);\n \n// you can pass whole object, or just an id\n\n\n$user\n->\ndetachRole\n(\n$adminRole\n);\n \n// in case you want to detach role\n\n\n$user\n->\ndetachAllRoles\n();\n \n// in case you want to detach all roles\n\n\n$user\n->\nsyncRoles\n(\n$roles\n);\n \n// you can pass Eloquent collection, or just an array of ids",
-            "title": "Roles"
+            "location": "/roles/managing-roles/",
+            "text": "There are multiple ways to work with your roles once you have created them. This package provides different ways to manage the relationship between your \nUser\n and \nRole\n models.\n\n\n\n\nMany to Many Relationships\n\n\nRead about many to many relationships in \nLaravel Docs\n.\n\n\n\n\nAttaching Roles\n\n\n    \n$adminRole\n \n=\n \nHttpOz\\Roles\\Models\\Roles\n::\nwhereSlug\n(\n'admin'\n)\n->\nfirst\n();\n\n    \n$user\n \n=\n \nApp\\User\n::\nfind\n(\n$id\n);\n\n\n    \n$user\n->\nattachRole\n(\n$adminRole\n);\n \n// you can pass whole object, or just an id\n\n\n\n\n\n\nDetaching Roles\n\n\n    \n$adminRole\n \n=\n \nHttpOz\\Roles\\Models\\Roles\n::\nwhereSlug\n(\n'admin'\n)\n->\nfirst\n();\n\n    \n$user\n \n=\n \nApp\\User\n::\nfind\n(\n$id\n);\n\n\n    \n$user\n->\ndetachRole\n(\n$adminRole\n);\n \n// in case you want to detach role\n\n    \n$user\n->\ndetachAllRoles\n();\n \n// in case you want to detach all roles\n\n\n\n\n\n\nSyncing Roles\n\n\n    \n$adminRole\n \n=\n \nHttpOz\\Roles\\Models\\Roles\n::\nwhereSlug\n(\n'admin'\n)\n->\nfirst\n();\n\n    \n$user\n \n=\n \nApp\\User\n::\nfind\n(\n$id\n);\n\n\n    \n$user\n->\ndetachRole\n(\n$adminRole\n);\n \n// in case you want to detach role\n\n    \n$user\n->\nsyncRoles\n(\n$roles\n);\n \n// you can pass Eloquent collection, or just an array of ids",
+            "title": "Managing Roles"
         },
         {
-            "location": "/roles/#attaching-syncing-and-detaching-roles",
-            "text": "It's really simple. You fetch a user from database and call  attachRole  method. There is  BelongsToMany  relationship between  User  and  Role  model.\nLearn about  Many To Many Relationships  use   App\\User ;  $user   =   User :: find ( $id );  $user -> attachRole ( $adminRole );   // you can pass whole object, or just an id  $user -> detachRole ( $adminRole );   // in case you want to detach role  $user -> detachAllRoles ();   // in case you want to detach all roles  $user -> syncRoles ( $roles );   // you can pass Eloquent collection, or just an array of ids",
-            "title": "Attaching, Syncing And Detaching Roles"
+            "location": "/roles/managing-roles/#attaching-roles",
+            "text": "$adminRole   =   HttpOz\\Roles\\Models\\Roles :: whereSlug ( 'admin' ) -> first (); \n     $user   =   App\\User :: find ( $id ); \n\n     $user -> attachRole ( $adminRole );   // you can pass whole object, or just an id",
+            "title": "Attaching Roles"
+        },
+        {
+            "location": "/roles/managing-roles/#detaching-roles",
+            "text": "$adminRole   =   HttpOz\\Roles\\Models\\Roles :: whereSlug ( 'admin' ) -> first (); \n     $user   =   App\\User :: find ( $id ); \n\n     $user -> detachRole ( $adminRole );   // in case you want to detach role \n     $user -> detachAllRoles ();   // in case you want to detach all roles",
+            "title": "Detaching Roles"
+        },
+        {
+            "location": "/roles/managing-roles/#syncing-roles",
+            "text": "$adminRole   =   HttpOz\\Roles\\Models\\Roles :: whereSlug ( 'admin' ) -> first (); \n     $user   =   App\\User :: find ( $id ); \n\n     $user -> detachRole ( $adminRole );   // in case you want to detach role \n     $user -> syncRoles ( $roles );   // you can pass Eloquent collection, or just an array of ids",
+            "title": "Syncing Roles"
         },
         {
             "location": "/groups/",
