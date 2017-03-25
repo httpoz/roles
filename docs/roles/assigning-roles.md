@@ -1,4 +1,4 @@
-Assigning / attaching roles has 2 very simple use cases - on creating a user (in seed file or controller) and attaching a role to an existing user.
+Assigning roles has 2 very simple use cases - when you are creating a user or when attaching a role to an existing user ([explained here](/roles/managing-roles)).
 
 ### On creating a user
 Assuming you are on a fresh install of Laravel, you would need to create a users table seeder. If you are creating users dynamically in a controller, then you do not need to create a seeder file.
