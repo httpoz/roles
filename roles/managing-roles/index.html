@@ -450,29 +450,33 @@
 <p>Read about many to many relationships in <a href="https://laravel.com/docs/5.3/eloquent-relationships#updating-many-to-many-relationships">Laravel Docs</a>.</p>
 </div>
 <h2 id="attaching-roles">Attaching Roles</h2>
+<p>Attaching a role a user is as simple as querying the Role model for the desired role and then attaching that role to a given user.
 <div class="codehilite"><pre><span></span>    <span class="nv">$adminRole</span> <span class="o">=</span> <span class="nx">HttpOz\Roles\Models\Roles</span><span class="o">::</span><span class="na">whereSlug</span><span class="p">(</span><span class="s1">&#39;admin&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
     <span class="nv">$user</span> <span class="o">=</span> <span class="nx">App\User</span><span class="o">::</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
 
     <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">attachRole</span><span class="p">(</span><span class="nv">$adminRole</span><span class="p">);</span> <span class="c1">// you can pass whole object, or just an id</span>
 </pre></div>
-
-
+</p>
 <h2 id="detaching-roles">Detaching Roles</h2>
+<p>You can choose to detach only one role or all the roles assigned to the user object.
 <div class="codehilite"><pre><span></span>    <span class="nv">$adminRole</span> <span class="o">=</span> <span class="nx">HttpOz\Roles\Models\Roles</span><span class="o">::</span><span class="na">whereSlug</span><span class="p">(</span><span class="s1">&#39;admin&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
     <span class="nv">$user</span> <span class="o">=</span> <span class="nx">App\User</span><span class="o">::</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
 
-    <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">detachRole</span><span class="p">(</span><span class="nv">$adminRole</span><span class="p">);</span> <span class="c1">// in case you want to detach role</span>
+    <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">detachRole</span><span class="p">(</span><span class="nv">$adminRole</span><span class="p">);</span> <span class="c1">// in case you want to detach one role</span>
     <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">detachAllRoles</span><span class="p">();</span> <span class="c1">// in case you want to detach all roles</span>
 </pre></div>
-
-
+</p>
 <h2 id="syncing-roles">Syncing Roles</h2>
+<p>You may also use the sync method to attach roles to a user model. Any roles that are not passed into the method will be detached from the user's roles. So, after this operation is complete, only the roles passed into the method will be attached to the user:
 <div class="codehilite"><pre><span></span>    <span class="nv">$adminRole</span> <span class="o">=</span> <span class="nx">HttpOz\Roles\Models\Roles</span><span class="o">::</span><span class="na">whereSlug</span><span class="p">(</span><span class="s1">&#39;admin&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
     <span class="nv">$user</span> <span class="o">=</span> <span class="nx">App\User</span><span class="o">::</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span>
+
+    <span class="nv">$roles</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">];</span> <span class="c1">// using the role IDs we want to assign to a user</span>
 
     <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">detachRole</span><span class="p">(</span><span class="nv">$adminRole</span><span class="p">);</span> <span class="c1">// in case you want to detach role</span>
     <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">syncRoles</span><span class="p">(</span><span class="nv">$roles</span><span class="p">);</span> <span class="c1">// you can pass Eloquent collection, or just an array of ids</span>
 </pre></div>
+</p>
               
               
             </article>
