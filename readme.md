@@ -9,6 +9,7 @@ For Laravel 5.3 users please use [Roles 1.4](https://github.com/httpoz/roles/tre
 [![Latest Stable Version](https://poser.pugx.org/httpoz/roles/v/stable.svg)](https://packagist.org/packages/httpoz/roles)
 [![Latest Unstable Version](https://poser.pugx.org/httpoz/roles/v/unstable.svg)](https://packagist.org/packages/httpoz/roles)
 [![License](https://poser.pugx.org/httpoz/roles/license.svg)](https://packagist.org/packages/httpoz/roles)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/307f89bf-52b1-4d2e-9a62-350d1f5de141/small.png)](https://insight.sensiolabs.com/projects/307f89bf-52b1-4d2e-9a62-350d1f5de141)
 
 Powerful package for handling roles in Laravel
 
