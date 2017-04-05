@@ -5,7 +5,6 @@ namespace HttpOz\Roles\Traits;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Cache;
 
-
 trait HasRole
 {
     /**
@@ -32,9 +31,7 @@ trait HasRole
      */
     public function getRoles()
     {
-        return Cache::remember('roles', config('roles.cache.expiry'), function () {
-            return (!$this->roles) ? $this->roles = $this->roles()->get() : $this->roles;
-        });
+        return (!$this->roles) ? $this->roles = $this->roles()->get() : $this->roles;
     }
 
     /**
