@@ -29,20 +29,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Cache Expiery
-    |--------------------------------------------------------------------------
-    |
-    | Here you can change the period for which cache should remember the roles.$_COOKIE
-    | Time should be in minutes, refer to official docs https://laravel.com/docs/5.4/cache.
-    | Default is 2weeks
-    */
-
-    'cache' => [
-        'expiry' => 20160,
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
     | Models
     |--------------------------------------------------------------------------
     |
