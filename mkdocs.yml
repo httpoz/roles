@@ -1,19 +1,43 @@
 site_name: Laravel Roles
 docs_dir: docs
-theme: readthedocs
-#theme_dir: 'docs/mkdocs-material'
+theme: 'material'
+repo_name: 'Http0z\Roles'
+repo_url: 'https://github.com/httpoz/roles'
 extra:
     palette:
         primary: 'red'
+    social:
+        - type: 'github'
+          link: 'https://github.com/httpoz'
+        - type: 'twitter'
+          link: 'https://twitter.com/httpoz'
+    version: '2.0.0'
 pages:
     - Home: 'index.md'
     - Getting Started:
         - 'Installation': 'installation.md'
         - 'Configuration': 'configuration.md'
-    - Core Concepts:
-        - 'Roles': 'roles.md'
-        - 'Groups': 'groups.md'
+    - Roles:
+        - 'Creating Roles': 'roles/creating-roles.md'
+        - 'Assigning Roles': 'roles/assigning-roles.md'
+        - 'Querying Roles': 'roles/querying-roles.md'
+        - 'Managing Roles': 'roles/managing-roles.md'
+    - Groups: 'groups.md'
     - The HTTP Layer:
         - 'Middleware': 'middleware.md'
         - 'Displaying Errors': 'displaying-errors.md'
         - 'Blade Syntax': 'blade-syntax.md'
+markdown_extensions:
+  - markdown.extensions.admonition:
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - pymdownx.inlinehilite:
+  - pymdownx.superfences:
+      extend_pygments_lang:
+        - name: php
+          lang: php
+          options:
+            startinline: true
+google_analytics:
+    - 'UA-91082163-1'
+    - 'auto'

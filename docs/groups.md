@@ -4,6 +4,10 @@ When you are creating roles, there is optional parameter `group`. It is set as `
 if ($user->group() == 'application.managers') {
     //
 }
+
+if ($user->inGroup('application.managers')) {
+    // if true do something
+}
 ```
 
 > If user has multiple roles, method `group` returns the first one in alphabetical order (a better implementation of this will be explored).

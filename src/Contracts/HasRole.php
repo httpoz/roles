@@ -2,9 +2,6 @@
 
 namespace HttpOz\Roles\Contracts;
 
-use Illuminate\Database\Eloquent\Model;
-
-
 interface HasRole
 {
     /**

@@ -1,7 +1,9 @@
 <?php
 namespace HttpOz\Roles\Exceptions;
 
-class GroupDeniedException extends AccessDeniedException
+use Exception;
+
+class GroupDeniedException extends Exception
 {
     /**
      * Create a new group denied exception instance.

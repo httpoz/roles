@@ -2,9 +2,6 @@
 
 namespace HttpOz\Roles\Traits;
 
-use Illuminate\Support\Str;
-
-
 trait Sluggable
 {
     /**

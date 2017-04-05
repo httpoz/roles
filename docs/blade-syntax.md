@@ -1,6 +1,6 @@
 There are two Blade extensions that are basically a replacement for classic if statements.
 
-```php
+``` php
 @role('admin') // @if(Auth::check() && Auth::user()->isRole('admin'))
     // user is admin
 @endrole

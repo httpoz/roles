@@ -2,9 +2,8 @@
 
 namespace HttpOz\Roles\Traits;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use InvalidArgumentException;
+use Illuminate\Support\Facades\Cache;
 
 
 trait HasRole
@@ -33,7 +32,9 @@ trait HasRole
      */
     public function getRoles()
     {
-        return (!$this->roles) ? $this->roles = $this->roles()->get() : $this->roles;
+        return Cache::remember('roles', config('roles.cache.expiry'), function () {
+            return (!$this->roles) ? $this->roles = $this->roles()->get() : $this->roles;
+        });
     }
 
     /**
@@ -143,13 +144,24 @@ trait HasRole
     }
 
     /**
-     * Get role level of a user.
+     * Get role group of a user.
      *
      * @return int
      */
     public function group()
     {
         return ($role = $this->getRoles()->sortBy('group')->first()) ? $role->group : 'default';
+    }
+
+    /**
+     * Check if user belongs to a given group
+     *
+     * @param string $group
+     * @return boolean
+     */
+    public function inGroup($group)
+    {
+        return ($this->getRoles()->where('group', 'LIKE', $group)->first() ? true : false);
     }
 
     /**

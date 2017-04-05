@@ -22,6 +22,9 @@ Add the package to your application service providers in `config/app.php` file.
 
 
 ## Publish Config File And Migrations
+Optimize Application
+
+    php artisan optimize
 
 Publish the package config file and migrations to your application. Run this command inside your terminal.
 
@@ -52,3 +55,6 @@ And that's it!
 ## Config File
 
 You can change connection for models, slug separator, models path and there is also a handy pretend feature. Have a look at config file for more information.
+
+### Caching
+The configuration for cache expiry is defaulted to 2 weeks (in minutes). You can update this value to suit your project specific needs.
