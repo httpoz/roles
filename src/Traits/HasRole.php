@@ -32,9 +32,11 @@ trait HasRole
      */
     public function getRoles()
     {
-        $this->roles = Cache::remember('roles.user_' . $this->id, config('roles.cache.expiry'), function () {
-            return $this->roles()->get();
-        });
+        if (is_null($this->roles)) {
+            $this->roles = Cache::remember('roles.user_' . $this->id, config('roles.cache.expiry'), function () {
+                return $this->roles()->get();
+            });
+        }
 
         return $this->roles;
     }
