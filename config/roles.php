@@ -27,6 +27,21 @@ return [
 
     'separator' => '.',
 
+     /*
+    |--------------------------------------------------------------------------
+    | Cache Expiry
+    |--------------------------------------------------------------------------
+    |
+    | Here you can enable cache and change the period for which cache should 
+    | remember the roles. Time should be in minutes, refer to official docs 
+    | https://laravel.com/docs/5.4/cache.
+    */
+
+    'cache' => [
+        'enabled' => false,
+        'expiry' => 20160,
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Models
