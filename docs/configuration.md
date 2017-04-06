@@ -57,4 +57,5 @@ And that's it!
 You can change connection for models, slug separator, models path and there is also a handy pretend feature. Have a look at config file for more information.
 
 ### Caching
+
 The configuration for cache expiry is defaulted to 2 weeks (in minutes). You can update this value to suit your project specific needs.
