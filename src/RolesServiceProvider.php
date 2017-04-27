@@ -24,8 +24,8 @@ class RolesServiceProvider extends ServiceProvider
         $target    = database_path('migrations').'/';
         
         $this->publishes([
-            $stub.'create_roles_table.php'     => $target.date('Y_m_d_His', time()).'_create_roles_table.php',
-            $stub.'create_role_user_table.php' => $target.date('Y_m_d_His', time()+1).'_create_role_user_table.php'
+            $stub.'create_roles_table.php'     => '2016_09_04_000000_create_roles_table.php',
+            $stub.'create_role_user_table.php' => '2016_09_04_100000_create_role_user_table.php'
         ], 'migrations');
 
         $this->publishes([
