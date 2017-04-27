@@ -38,7 +38,6 @@ return [
     */
 
     'cache' => [
-        'enabled' => false,
         'expiry' => 20160,
     ],
 
