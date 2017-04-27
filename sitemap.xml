@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-04-05</lastmod>
+     <lastmod>2017-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,13 +13,13 @@
         
     <url>
      <loc>/installation/</loc>
-     <lastmod>2017-04-05</lastmod>
+     <lastmod>2017-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/configuration/</loc>
-     <lastmod>2017-04-05</lastmod>
+     <lastmod>2017-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -29,25 +29,25 @@
         
     <url>
      <loc>/roles/creating-roles/</loc>
-     <lastmod>2017-04-05</lastmod>
+     <lastmod>2017-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/roles/assigning-roles/</loc>
-     <lastmod>2017-04-05</lastmod>
+     <lastmod>2017-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/roles/querying-roles/</loc>
-     <lastmod>2017-04-05</lastmod>
+     <lastmod>2017-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/roles/managing-roles/</loc>
-     <lastmod>2017-04-05</lastmod>
+     <lastmod>2017-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -56,7 +56,7 @@
     
     <url>
      <loc>/groups/</loc>
-     <lastmod>2017-04-05</lastmod>
+     <lastmod>2017-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -65,19 +65,19 @@
         
     <url>
      <loc>/middleware/</loc>
-     <lastmod>2017-04-05</lastmod>
+     <lastmod>2017-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/displaying-errors/</loc>
-     <lastmod>2017-04-05</lastmod>
+     <lastmod>2017-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/blade-syntax/</loc>
-     <lastmod>2017-04-05</lastmod>
+     <lastmod>2017-04-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

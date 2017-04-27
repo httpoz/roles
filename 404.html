@@ -11,7 +11,7 @@
       
         <link rel="shortcut icon" href="/assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.1, mkdocs-material-1.2.0">
+      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.5.0">
     
     
       
@@ -22,9 +22,9 @@
       <script src="/assets/javascripts/modernizr-56ade86843.js"></script>
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/application-e17eeafcbc.css">
+      <link rel="stylesheet" href="/assets/stylesheets/application-d848f886dc.css">
       
-        <link rel="stylesheet" href="/assets/stylesheets/application-892b79c5c5.palette.css">
+        <link rel="stylesheet" href="/assets/stylesheets/application-66fa0d9bba.palette.css">
       
     
     
@@ -58,12 +58,12 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <header class="md-header">
+      <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
         
-          <a href="" title="Laravel Roles" class="md-icon md-icon--home md-header-nav__button">
+          <a href="/" title="Laravel Roles" class="md-icon md-icon--home md-header-nav__button">
           </a>
         
       </div>
@@ -86,12 +86,18 @@
   <div class="md-search__overlay"></div>
   <div class="md-search__inner">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
       <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result"></div>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
       </div>
     </div>
   </div>
@@ -175,7 +181,7 @@
 
 
   <li class="md-nav__item">
-    <a href="" title="Home" class="md-nav__link">
+    <a href="/" title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -206,7 +212,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/installation" title="Installation" class="md-nav__link">
+    <a href="/installation/" title="Installation" class="md-nav__link">
       Installation
     </a>
   </li>
@@ -218,7 +224,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/configuration" title="Configuration" class="md-nav__link">
+    <a href="/configuration/" title="Configuration" class="md-nav__link">
       Configuration
     </a>
   </li>
@@ -254,7 +260,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/roles/creating-roles" title="Creating Roles" class="md-nav__link">
+    <a href="/roles/creating-roles/" title="Creating Roles" class="md-nav__link">
       Creating Roles
     </a>
   </li>
@@ -266,7 +272,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/roles/assigning-roles" title="Assigning Roles" class="md-nav__link">
+    <a href="/roles/assigning-roles/" title="Assigning Roles" class="md-nav__link">
       Assigning Roles
     </a>
   </li>
@@ -278,7 +284,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/roles/querying-roles" title="Querying Roles" class="md-nav__link">
+    <a href="/roles/querying-roles/" title="Querying Roles" class="md-nav__link">
       Querying Roles
     </a>
   </li>
@@ -290,7 +296,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/roles/managing-roles" title="Managing Roles" class="md-nav__link">
+    <a href="/roles/managing-roles/" title="Managing Roles" class="md-nav__link">
       Managing Roles
     </a>
   </li>
@@ -307,7 +313,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/groups" title="Groups" class="md-nav__link">
+    <a href="/groups/" title="Groups" class="md-nav__link">
       Groups
     </a>
   </li>
@@ -338,7 +344,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/middleware" title="Middleware" class="md-nav__link">
+    <a href="/middleware/" title="Middleware" class="md-nav__link">
       Middleware
     </a>
   </li>
@@ -350,7 +356,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/displaying-errors" title="Displaying Errors" class="md-nav__link">
+    <a href="/displaying-errors/" title="Displaying Errors" class="md-nav__link">
       Displaying Errors
     </a>
   </li>
@@ -362,7 +368,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/blade-syntax" title="Blade Syntax" class="md-nav__link">
+    <a href="/blade-syntax/" title="Blade Syntax" class="md-nav__link">
       Blade Syntax
     </a>
   </li>
@@ -383,10 +389,11 @@
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
-               
               
   <h1>404 - Not found</h1>
 
+              
+                
               
             </article>
           </div>
@@ -425,7 +432,7 @@
       
     </div>
     
-      <script src="/assets/javascripts/application-30ac6a1727.js"></script>
+      <script src="/assets/javascripts/application-c6f9af8d0c.js"></script>
       <script>app.initialize({url:{base:""}})</script>
       
     
