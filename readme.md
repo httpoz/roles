@@ -23,7 +23,7 @@ This project was largely inspired by Roman's [romanbican/roles](https://github.c
 
 ## More Information
 
-For more information, please have a look at [HasRole](https://github.com/httpoz/roles/blob/master/src/HttpOz/Roles/Contracts/HasRole.php) contract.
+For more information, please have a look at [HasRole](https://github.com/httpoz/roles/blob/master/src/Contracts/HasRole.php) contract.
 
 ## License
 
