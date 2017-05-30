@@ -9,29 +9,39 @@ use Illuminate\Database\Eloquent\Model;
 use HttpOz\Roles\Traits\RoleHasRelations;
 use HttpOz\Roles\Contracts\RoleHasRelations as RoleHasRelationsContract;
 
-class Role extends Model implements RoleHasRelationsContract
-{
-    use Sluggable, RoleHasRelations;
+class Role extends Model implements RoleHasRelationsContract {
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['name', 'slug', 'description', 'group'];
+  use Sluggable, RoleHasRelations;
 
-    /**
-     * Create a new model instance.
-     *
-     * @param array $attributes
-     * @return void
-     */
-    public function __construct(array $attributes = [])
-    {
-        parent::__construct($attributes);
-        if ($connection = config('roles.connection')) {
-            $this->connection = $connection;
-        }
+  /**
+   * The attributes that are mass assignable.
+   *
+   * @var array
+   */
+  protected $fillable = ['name', 'slug', 'description', 'group'];
+
+  /**
+   * Create a new model instance.
+   *
+   * @param array $attributes
+   *
+   * @return void
+   */
+  public function __construct(array $attributes = []) {
+    parent::__construct($attributes);
+    if ($connection = config('roles.connection')) {
+      $this->connection = $connection;
     }
+  }
+
+  /**
+   * @param $slug
+   * @return mixed
+   *
+   * @todo document findBySlug
+   */
+  public static function findBySlug($slug) {
+    return self::where('slug', $slug)->first();
+  }
 
 }
