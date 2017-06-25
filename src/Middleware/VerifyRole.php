@@ -9,6 +9,9 @@ use HttpOz\Roles\Exceptions\RoleDeniedException;
 
 class VerifyRole
 {
+
+    const DELIMITER = '|';
+
     /**
      * @var \Illuminate\Contracts\Auth\Guard
      */
@@ -36,9 +39,15 @@ class VerifyRole
      */
     public function handle($request, Closure $next, $role)
     {
-        if ($this->auth->check() && $this->auth->user()->isRole($role)) {
+        if (strpos(self::DELIMITER,$role)){
+            $roles=explode(self::DELIMITER,$role);
+            if ($this->auth->check() && $this->auth->user()->isOne($roles)) {
+                return $next($request);
+            }
+        }else if ($this->auth->check() && $this->auth->user()->isRole($role)) {
             return $next($request);
         }
+
         throw new RoleDeniedException($role);
     }
 }
