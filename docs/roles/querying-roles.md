@@ -92,7 +92,7 @@ In this case, a user has to have all the given roles. Multiple options have been
 
  **Using the role's slug**
  ```php
-    $adminRole = Role::where('slug', 'admin')->first();
+    $adminRole = Role::findBySlug('admin');
     $admins = $adminRole->users;
  ```
  **Using the role's group**
