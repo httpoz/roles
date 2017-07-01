@@ -588,7 +588,7 @@
 </pre></div>
 </p>
 <p><strong>Using the role's slug</strong>
- <div class="codehilite"><pre><span></span>   <span class="nv">$adminRole</span> <span class="o">=</span> <span class="nx">Role</span><span class="o">::</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;slug&#39;</span><span class="p">,</span> <span class="s1">&#39;admin&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+ <div class="codehilite"><pre><span></span>   <span class="nv">$adminRole</span> <span class="o">=</span> <span class="nx">Role</span><span class="o">::</span><span class="na">findBySlug</span><span class="p">(</span><span class="s1">&#39;admin&#39;</span><span class="p">);</span>
    <span class="nv">$admins</span> <span class="o">=</span> <span class="nv">$adminRole</span><span class="o">-&gt;</span><span class="na">users</span><span class="p">;</span>
 </pre></div>
 
