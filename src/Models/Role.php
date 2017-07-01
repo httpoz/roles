@@ -37,8 +37,6 @@ class Role extends Model implements RoleHasRelationsContract {
   /**
    * @param $slug
    * @return mixed
-   *
-   * @todo document findBySlug
    */
   public static function findBySlug($slug) {
     return self::where('slug', $slug)->first();

@@ -11,8 +11,8 @@ In the run function of your UsersTableSeeder (or controller), you would need to 
 
 ```php
     // 1. query the Roles by the slug
-    $adminRole = \HttpOz\Roles\Models\Role::whereSlug('admin')->first();
-    $moderatorRole = \HttpOz\Roles\Models\Role::whereSlug('forum.moderator')->first();
+    $adminRole = \HttpOz\Roles\Models\Role::findBySlug('admin');
+    $moderatorRole = \HttpOz\Roles\Models\Role::findBySlug('forum.moderator');
 
     // 2a. Create admin
     $admin = \App\User::create([
