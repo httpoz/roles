@@ -2,11 +2,21 @@ language: php
 php:
   - 5.6
   - 7.0
-  - 7.1
+before_install:
+  - composer self-update
+  - composer create-project laravel/laravel
+  - cd ./laravel
+  - composer config repositories.httpoz vcs https://github.com/httpoz/roles.git
+  - composer require httpoz/roles dev-master
+  - composer update
+  - cp ./vendor/httpoz/roles/tests/config/.env ./
+  - rm ./app/User.php
+  - cp ./vendor/httpoz/roles/tests/config/User.php ./app
+  - rm ./config/app.php
+  - cp ./vendor/httpoz/roles/tests/config/app.php ./config
+  - php artisan vendor:publish
+  - mysql -e "create database IF NOT EXISTS test;" -uroot
+  - php artisan migrate
+  - cd ./vendor/httpoz/roles
 
-matrix:
-  fast_finish: true
-  allow_failures:
-    - php: 5.6
-
-script: phpunit tests/test.php
+script: "phpunit"
