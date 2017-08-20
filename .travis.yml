@@ -14,6 +14,8 @@ before_install:
   - cp ./vendor/httpoz/roles/tests/config/User.php ./app
   - rm ./database/factories/ModelFactory.php
   - cp ./vendor/httpoz/roles/tests/config/ModelFactory.php ./database/factories
+  - rm ./app/Providers/AppServiceProvider.php
+  - cp ./vendor/httpoz/roles/tests/config/AppServiceProvider.php ./app/Providers
   - rm ./config/app.php
   - cp ./vendor/httpoz/roles/tests/config/app.php ./config
   - php artisan vendor:publish
