@@ -10,6 +10,8 @@ before_install:
   - composer require httpoz/roles dev-master
   - composer update
   - cp ./vendor/httpoz/roles/tests/config/.env ./
+  - rm phpunit.xml
+  - cp ./vendor/httpoz/roles/tests/config/phpunit.xml ./
   - rm ./app/User.php
   - cp ./vendor/httpoz/roles/tests/config/User.php ./app
   - rm ./database/factories/ModelFactory.php
@@ -21,6 +23,5 @@ before_install:
   - php artisan vendor:publish
   - mysql -e "create database IF NOT EXISTS test;" -uroot
   - php artisan migrate
-  - cd ./vendor/httpoz/roles
 
 script: "phpunit"
