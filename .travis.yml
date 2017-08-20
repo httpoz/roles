@@ -4,7 +4,7 @@ php:
   - 7.0
 before_install:
   - composer self-update
-  - composer create-project laravel/laravel laravel "5.4.*""
+  - composer create-project laravel/laravel laravel "5.4.*"
   - cd ./laravel
   - composer config repositories.httpoz vcs https://github.com/httpoz/roles.git
   - composer require httpoz/roles dev-master
