@@ -9,10 +9,11 @@ before_install:
   - composer config repositories.httpoz vcs https://github.com/httpoz/roles.git
   - composer require httpoz/roles dev-master
   - composer update
-  - ls vendor
   - cp ./vendor/httpoz/roles/tests/config/.env ./
   - rm ./app/User.php
   - cp ./vendor/httpoz/roles/tests/config/User.php ./app
+  - rm ./database/factories/ModelFactory.php
+  - cp ./vendor/httpoz/roles/tests/config/ModelFactory.php ./database/factories
   - rm ./config/app.php
   - cp ./vendor/httpoz/roles/tests/config/app.php ./config
   - php artisan vendor:publish
