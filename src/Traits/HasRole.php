@@ -31,13 +31,16 @@ trait HasRole
      */
     public function getRoles()
     {
-        if (is_null($this->roles)) {
-            $this->roles = Cache::remember('roles.user_' . $this->id, config('roles.cache.expiry'), function () {
-                return $this->roles()->get();
-            });
+        if (config('roles.cache.enabled') {
+            if (is_null($this->roles)) {
+                $this->roles = Cache::remember('roles.user_' . $this->id, config('roles.cache.expiry'), function () {
+                    return $this->roles()->get();
+                });
+            }
+            return $this->roles;
+        } else {
+            return $this->roles;
         }
-
-        return $this->roles;
     }
 
     /**
@@ -108,8 +111,10 @@ trait HasRole
      */
     public function attachRole($role)
     {
-        if(!$this->getRoles()->contains($role)){
-            Cache::forget('roles.user_' . $this->id);
+        if (!$this->getRoles()->contains($role)) {
+            if (config('roles.cache.enabled') {
+                Cache::forget('roles.user_' . $this->id);
+            }
             return $this->roles()->attach($role);
         } else {
             return true;
@@ -125,7 +130,9 @@ trait HasRole
     public function detachRole($role)
     {
         $this->roles = null;
-        Cache::forget('roles.user_' . $this->id);
+        if (config('roles.cache.enabled') {
+            Cache::forget('roles.user_' . $this->id);
+        }
         return $this->roles()->detach($role);
     }
 
@@ -137,7 +144,9 @@ trait HasRole
     public function detachAllRoles()
     {
         $this->roles = null;
-        Cache::forget('roles.user_' . $this->id);
+        if (config('roles.cache.enabled') {
+            Cache::forget('roles.user_' . $this->id);
+        }
         return $this->roles()->detach();
     }
 
@@ -150,7 +159,9 @@ trait HasRole
     public function syncRoles($roles)
     {
         $this->roles = null;
-        Cache::forget('roles.user_' . $this->id);
+        if (config('roles.cache.enabled') {
+            Cache::forget('roles.user_' . $this->id);
+        }
         return $this->roles()->sync($roles);
     }
 
