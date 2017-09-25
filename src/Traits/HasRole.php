@@ -31,7 +31,7 @@ trait HasRole
      */
     public function getRoles()
     {
-        if (config('roles.cache.enabled') {
+        if (config('roles.cache.enabled')) {
             if (is_null($this->roles)) {
                 $this->roles = Cache::remember('roles.user_' . $this->id, config('roles.cache.expiry'), function () {
                     return $this->roles()->get();
@@ -112,7 +112,7 @@ trait HasRole
     public function attachRole($role)
     {
         if (!$this->getRoles()->contains($role)) {
-            if (config('roles.cache.enabled') {
+            if (config('roles.cache.enabled')) {
                 Cache::forget('roles.user_' . $this->id);
             }
             return $this->roles()->attach($role);
@@ -130,7 +130,7 @@ trait HasRole
     public function detachRole($role)
     {
         $this->roles = null;
-        if (config('roles.cache.enabled') {
+        if (config('roles.cache.enabled')) {
             Cache::forget('roles.user_' . $this->id);
         }
         return $this->roles()->detach($role);
@@ -144,7 +144,7 @@ trait HasRole
     public function detachAllRoles()
     {
         $this->roles = null;
-        if (config('roles.cache.enabled') {
+        if (config('roles.cache.enabled')) {
             Cache::forget('roles.user_' . $this->id);
         }
         return $this->roles()->detach();
@@ -159,7 +159,7 @@ trait HasRole
     public function syncRoles($roles)
     {
         $this->roles = null;
-        if (config('roles.cache.enabled') {
+        if (config('roles.cache.enabled')) {
             Cache::forget('roles.user_' . $this->id);
         }
         return $this->roles()->sync($roles);
