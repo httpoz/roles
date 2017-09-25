@@ -8,7 +8,7 @@ before_install:
   - cd ./laravel
   - composer config repositories.httpoz vcs https://github.com/httpoz/roles.git
   - composer require httpoz/roles dev-master
-  - composer update
+  - composer update --prefer-dist --no-interaction
   - cp ./vendor/httpoz/roles/tests/config/.env ./
   - rm phpunit.xml
   - cp ./vendor/httpoz/roles/tests/config/phpunit.xml ./
