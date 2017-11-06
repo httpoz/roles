@@ -1,17 +1,34 @@
 
+
+
+
 <!DOCTYPE html>
-<html class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
       
       
-        <link rel="shortcut icon" href="./assets/images/favicon.png">
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
       
-      <meta name="generator" content="mkdocs-0.16.2, mkdocs-material-1.5.0">
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="./assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.1, mkdocs-material-2.0.4">
     
     
       
@@ -19,19 +36,14 @@
       
     
     
-      <script src="./assets/javascripts/modernizr-56ade86843.js"></script>
-    
-    
-      <link rel="stylesheet" href="./assets/stylesheets/application-d848f886dc.css">
-      
-        <link rel="stylesheet" href="./assets/stylesheets/application-66fa0d9bba.palette.css">
+      <link rel="stylesheet" href="./assets/stylesheets/application-709eec9410.css">
       
     
     
+      <script src="./assets/javascripts/modernizr-e826f8942a.js"></script>
+    
+    
       
-        
-        
-        
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
@@ -41,10 +53,7 @@
     
   </head>
   
-  
-  
-  
-    <body data-md-color-primary="red" data-md-color-accent="">
+    <body>
   
     <svg class="md-svg">
       <defs>
@@ -62,10 +71,11 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <a href="." title="Laravel Roles" class="md-icon md-icon--home md-header-nav__button">
-          </a>
-        
+        <a href="." title="Laravel Roles" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
@@ -82,20 +92,21 @@
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
-          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
           
-<div class="md-search" data-md-component="search">
-  <div class="md-search__overlay"></div>
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
   <div class="md-search__inner">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
       <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">&#xE5CD;</button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+          <div class="md-search-result__meta">
             Type to start searching
           </div>
           <ol class="md-search-result__list"></ol>
@@ -104,18 +115,19 @@
     </div>
   </div>
 </div>
+          
         
       </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <div class="md-header-nav__source">
-          
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
             
 
 
   
 
 
-  <a href="https://github.com/httpoz/roles" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/httpoz/roles/" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -128,15 +140,14 @@
     </div>
   </a>
 
-          
+          </div>
         </div>
-      </div>
+      
     </div>
   </nav>
 </header>
     
     <div class="md-container">
-      
       
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
@@ -147,9 +158,11 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="drawer">
-    
-      <i class="md-icon md-icon--home md-nav__button"></i>
-    
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
     Laravel Roles
   </label>
   
@@ -160,7 +173,7 @@
   
 
 
-  <a href="https://github.com/httpoz/roles" title="Go to repository" class="md-source" data-md-source="github">
+  <a href="https://github.com/httpoz/roles/" title="Go to repository" class="md-source" data-md-source="github">
     
       <div class="md-source__icon">
         <svg viewBox="0 0 24 24" width="24" height="24">
@@ -458,6 +471,8 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/httpoz/roles/edit/master/docs/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
                 
                 <h1 id="roles-for-laravel-54">Roles for Laravel 5.4</h1>
 <p><a href="https://travis-ci.org/httpoz/roles"><img alt="Build Status" src="https://travis-ci.org/httpoz/roles.svg" /></a>
@@ -535,8 +550,9 @@
       
     </div>
     
-      <script src="./assets/javascripts/application-c6f9af8d0c.js"></script>
-      <script>app.initialize({url:{base:"."}})</script>
+      <script src="./assets/javascripts/application-8e4952e681.js"></script>
+      
+      <script>app.initialize({version:"0.17.1",url:{base:"."}})</script>
       
     
     
