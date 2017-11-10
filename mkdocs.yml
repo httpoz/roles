@@ -29,15 +29,9 @@ pages:
         - 'Blade Syntax': 'blade-syntax.md'
 markdown_extensions:
   - markdown.extensions.admonition:
-  - markdown.extensions.codehilite:
-      guess_lang: false
+  - pymdownx.highlight:
   - pymdownx.inlinehilite:
   - pymdownx.superfences:
-      extend_pygments_lang:
-        - name: php
-          lang: php
-          options:
-            startinline: true
 google_analytics:
     - 'UA-91082163-1'
     - 'auto'
