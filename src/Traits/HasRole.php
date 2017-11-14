@@ -98,9 +98,15 @@ trait HasRole
      */
     public function hasRole($role)
     {
-        return $this->getRoles()->contains(function ($value, $key) use ($role) {
-            return $role == $value->id || Str::is($role, $value->slug);
-        });
+        if($this->getRoles()) {
+            return $this->getRoles()->contains(function ($value, $key) use (
+              $role
+            ) {
+                return $role == $value->id || Str::is($role, $value->slug);
+            });
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -111,7 +117,7 @@ trait HasRole
      */
     public function attachRole($role)
     {
-        if (!$this->getRoles()->contains($role)) {
+        if ($this->getRoles() && !$this->getRoles()->contains($role)) {
             if (config('roles.cache.enabled')) {
                 Cache::forget('roles.user_' . $this->id);
             }

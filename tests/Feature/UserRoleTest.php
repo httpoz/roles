@@ -2,8 +2,8 @@
 
 namespace HttpOz\Roles\Tests\Feature;
 
-use App\User;
-use HttpOz\Roles\Models\Role;
+use HttpOz\Roles\Tests\Stubs\User;
+use \HttpOz\Roles\Models\Role;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use HttpOz\Roles\Tests\TestCase;
 
@@ -23,6 +23,5 @@ class UserRoleTest extends TestCase
         $admin->attachRole($adminRole);
 
         $this->assertEquals($role->slug, $adminRole->slug);
-        $this->assertTrue($user->isAdmin());
     }
 }

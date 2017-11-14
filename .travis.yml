@@ -4,23 +4,5 @@ php:
   - 7.0
 before_install:
   - composer self-update
-  - composer create-project laravel/laravel laravel "5.4.*"
-  - cd ./laravel
-  - composer require httpoz/roles dev-master
-  - composer update --prefer-dist --no-interaction
-  - cp ./vendor/httpoz/roles/tests/config/.env ./
-  - rm phpunit.xml
-  - cp ./vendor/httpoz/roles/tests/config/phpunit.xml ./
-  - rm ./app/User.php
-  - cp ./vendor/httpoz/roles/tests/config/User.php ./app
-  - rm ./database/factories/ModelFactory.php
-  - cp ./vendor/httpoz/roles/tests/config/ModelFactory.php ./database/factories
-  - rm ./app/Providers/AppServiceProvider.php
-  - cp ./vendor/httpoz/roles/tests/config/AppServiceProvider.php ./app/Providers
-  - rm ./config/app.php
-  - cp ./vendor/httpoz/roles/tests/config/app.php ./config
-  - php artisan vendor:publish
-  - mysql -e "create database IF NOT EXISTS test;" -uroot
-  - php artisan migrate
 
 script: "vendor/bin/phpunit"

@@ -11,21 +11,17 @@ class TestCase extends \Orchestra\Testbench\TestCase
         parent::setUp();
 
         $this->loadLaravelMigrations(['--database' => 'testbench']);
-        
-        $this->loadMigrationsFrom([
-            '--database' => 'testbench',
-            '--realpath' => realpath(__DIR__.'/../database/migrations'),
-        ]);
+        $this->artisan('migrate', ['--database' => 'testbench']);
+
+
+         /*$this->loadMigrationsFrom([
+             '--database' => 'testbench',
+             '--realpath' => realpath(__DIR__.'../database/migrations'),
+         ]);*/
 
         $this->withFactories(__DIR__.'/../database/factories');
     }
 
-    /**
-     * Define environment setup.
-     *
-     * @param  \Illuminate\Foundation\Application  $app
-     * @return void
-     */
     protected function getPackageProviders($app)
     {
         return [
@@ -47,6 +43,23 @@ class TestCase extends \Orchestra\Testbench\TestCase
             'driver'   => 'sqlite',
             'database' => ':memory:',
             'prefix'   => '',
+        ]);
+        $app['config']->set('roles', [
+            'connection' => null,
+            'separator' => '.',
+            'cache' => [
+                'enabled' => false,
+                'expiry' => 20160,
+            ],
+            'models' => [
+                'role' => \HttpOz\Roles\Models\Role::class
+            ],
+            'pretend' => [
+                'enabled' => false,
+                'options' => [
+                    'isRole' => true
+                ],
+            ],
         ]);
     }
 }
