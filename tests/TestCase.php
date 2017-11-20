@@ -1,7 +1,9 @@
 <?php
 namespace HttpOz\Roles\Tests;
 
-class TestCase extends \Orchestra\Testbench\TestCase
+use Orchestra\Testbench\TestCase as Orchestra;
+
+class TestCase extends Orchestra
 {
     /**
      * Setup the test environment.
@@ -14,10 +16,10 @@ class TestCase extends \Orchestra\Testbench\TestCase
         $this->artisan('migrate', ['--database' => 'testbench']);
 
 
-         /*$this->loadMigrationsFrom([
+         $this->loadMigrationsFrom([
              '--database' => 'testbench',
              '--realpath' => realpath(__DIR__.'../database/migrations'),
-         ]);*/
+         ]);
 
         $this->withFactories(__DIR__.'/../database/factories');
     }
