@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Cache;
 
 trait HasRole
 {
+
     /**
      * Property for caching roles.
      *
@@ -113,18 +114,15 @@ trait HasRole
      * Attach role to a user.
      *
      * @param int|\HttpOz\Roles\Models\Role $role
-     * @return null|bool
+     * @return bool
      */
     public function attachRole($role)
     {
-        if ($this->getRoles() && !$this->getRoles()->contains($role)) {
-            if (config('roles.cache.enabled')) {
-                Cache::forget('roles.user_' . $this->id);
-            }
-            return $this->roles()->attach($role);
-        } else {
-            return true;
+        if (!collect($this->getRoles())->contains($role)) {
+            $this->clearCached();
+            $this->roles()->attach($role);
         }
+        return true;
     }
 
     /**
@@ -250,4 +248,24 @@ trait HasRole
         }
         return parent::__call($method, $parameters);
     }
+
+    /**
+     * Get flag on whether role caching is enabled
+     * @return boolean
+     */
+    private function cacheEnabled()
+    {
+        return (bool)config('roles.cache.enabled');
+    }
+
+    private function getCachedRoles()
+    {
+        return Cache::get();
+    }
+
+    private function clearCached()
+    {
+        ($this->cacheEnabled()) ? Cache::forget('roles.user_' . $this->id) : null;
+    }
+
 }
