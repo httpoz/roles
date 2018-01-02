@@ -3,4 +3,6 @@ vendor/
 /.phpintel
 /.idea
 /build
+
+# hack
 composer.lock
