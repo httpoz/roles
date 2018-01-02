@@ -3,3 +3,4 @@ vendor/
 /.phpintel
 /.idea
 /build
+composer.lock
