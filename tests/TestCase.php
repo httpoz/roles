@@ -1,4 +1,5 @@
 <?php
+
 namespace HttpOz\Roles\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
@@ -11,17 +12,10 @@ class TestCase extends Orchestra
     public function setUp()
     {
         parent::setUp();
-
         $this->loadLaravelMigrations(['--database' => 'testbench']);
-        $this->artisan('migrate', ['--database' => 'testbench']);
+        $this->setUpDatabase($this->app);
 
-
-         $this->loadMigrationsFrom([
-             '--database' => 'testbench',
-             '--realpath' => realpath(__DIR__.'../database/migrations'),
-         ]);
-
-        $this->withFactories(__DIR__.'/../database/factories');
+        $this->withFactories(__DIR__ . '/../database/factories');
     }
 
     protected function getPackageProviders($app)
@@ -35,7 +29,7 @@ class TestCase extends Orchestra
     /**
      * Define environment setup.
      *
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param  \Illuminate\Foundation\Application $app
      * @return void
      */
     public function getEnvironmentSetUp($app)
@@ -46,6 +40,7 @@ class TestCase extends Orchestra
             'database' => ':memory:',
             'prefix'   => '',
         ]);
+
         $app['config']->set('roles', [
             'connection' => null,
             'separator' => '.',
@@ -63,5 +58,18 @@ class TestCase extends Orchestra
                 ],
             ],
         ]);
+    }
+
+    /**
+     * Set up the database.
+     *
+     * @param \Illuminate\Foundation\Application $app
+     */
+    protected function setUpDatabase($app)
+    {
+        include_once __DIR__.'/../database/migrations/create_roles_table.php';
+        include_once __DIR__.'/../database/migrations/create_role_user_table.php';
+        (new \CreateRolesTable())->up();
+        (new \CreateRoleUserTable())->up();
     }
 }
