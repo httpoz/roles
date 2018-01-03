@@ -5,6 +5,7 @@
 For Laravel 5.3 users please use [Roles 1.4](https://github.com/httpoz/roles/tree/1.4)
 
 [![Build Status](https://travis-ci.org/httpoz/roles.svg)](https://travis-ci.org/httpoz/roles)
+[![codecov](https://codecov.io/gh/httpoz/roles/branch/master/graph/badge.svg)](https://codecov.io/gh/httpoz/roles)
 [![Total Downloads](https://poser.pugx.org/httpoz/roles/d/total.svg)](https://packagist.org/packages/httpoz/roles)
 [![PHPPackages Rank](http://phppackages.org/p/httpoz/roles/badge/rank.svg)](http://phppackages.org/p/httpoz/roles)
 [![PHPPackages Referenced By](http://phppackages.org/p/httpoz/roles/badge/referenced-by.svg)](http://phppackages.org/p/httpoz/roles)
