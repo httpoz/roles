@@ -2,6 +2,7 @@
 
 namespace HttpOz\Roles\Tests;
 
+use HttpOz\Roles\Tests\Stubs\User;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -40,6 +41,7 @@ class TestCase extends Orchestra
             'database' => ':memory:',
             'prefix'   => '',
         ]);
+        $app['config']->set('auth.providers.users.model', User::class);
 
         $app['config']->set('roles', [
             'connection' => null,
