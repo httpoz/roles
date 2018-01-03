@@ -1,5 +1,5 @@
 <?php
-namespace HttpOz\Roles\Tests\unit;
+namespace HttpOz\Roles\Tests\Unit;
 
 use HttpOz\Roles\Models\Role;
 use HttpOz\Roles\Tests\Stubs\User;
