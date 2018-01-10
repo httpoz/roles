@@ -1,6 +1,5 @@
 # Roles for Laravel 5.4
 
-[![Join the chat at https://gitter.im/httpoz-roles/Lobby](https://badges.gitter.im/httpoz-roles/Lobby.svg)](https://gitter.im/httpoz-roles/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 *** Notice
 For Laravel 5.3 users please use [Roles 1.4](https://github.com/httpoz/roles/tree/1.4)
 
