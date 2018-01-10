@@ -1,7 +1,6 @@
 site/
 vendor/
 /.phpintel
-/.idea
 /build
 
 # hack
