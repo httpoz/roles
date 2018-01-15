@@ -1,7 +1,7 @@
 # Roles for Laravel 5.4
 
 *** Notice
-For Laravel 5.3 users please use [Roles 1.4](https://github.com/httpoz/roles/tree/1.4)
+For Laravel 5.3 users please use 
 
 [![Build Status](https://travis-ci.org/httpoz/roles.svg)](https://travis-ci.org/httpoz/roles)
 [![codecov](https://codecov.io/gh/httpoz/roles/branch/master/graph/badge.svg)](https://codecov.io/gh/httpoz/roles)
@@ -14,6 +14,11 @@ For Laravel 5.3 users please use [Roles 1.4](https://github.com/httpoz/roles/tre
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/307f89bf-52b1-4d2e-9a62-350d1f5de141/small.png)](https://insight.sensiolabs.com/projects/307f89bf-52b1-4d2e-9a62-350d1f5de141)
 
 Powerful package for handling roles in Laravel
+
+|Laravel Version |Roles Version  |
+|--------|----------|
+| 5.3.*  | [Roles 1.4](https://github.com/httpoz/roles/tree/1.4) |
+| 5.4.*  | Roles 2.2.*
 
 ## Documentation
 You can find the [documentation here.](https://httpoz.github.io/roles/)
