@@ -58,16 +58,15 @@ class HasRoleTraitTest extends TestCase {
 		] );
 		$adminRole   = factory( Role::class )->create();
 		$managerRole = factory( Role::class )->create( [ 'name' => 'Manager', 'slug' => 'manager' ] );
-		$user->attachRole($adminRole);
-		$user->attachRole($managerRole);
 
-		$this->assertTrue($user->hasRole('admin'));
-		$this->assertTrue($user->hasRole('manager'));
+		$user->attachRole($adminRole);
+
+		$this->assertFalse($user->hasRole('manager'));
 
 		config(['roles.cache.enabled' => true]);
 
 		$this->assertTrue($user->hasRole('admin'));
-		$this->assertTrue($user->hasRole('manager'));
+		$this->assertFalse($user->hasRole('manager'));
 	}
 
 	public function testIsRole() {
@@ -75,8 +74,43 @@ class HasRoleTraitTest extends TestCase {
 			'name' => 'The Oz'
 		] );
 		$adminRole   = factory( Role::class )->create();
+		$managerRole = factory( Role::class )->create( [ 'name' => 'Manager', 'slug' => 'manager' ] );
 		$user->attachRole($adminRole);
 
-		$this->assertTrue($user->isRole('admin'));
+		$this->assertTrue($user->isRole($adminRole->slug));
+		$this->assertFalse($user->isRole($managerRole->slug));
+
+		config(['roles.pretend.enabled' => true]);
+
+
+		$this->assertTrue($user->isRole($managerRole->slug));
+	}
+
+	public function testIsAll()  {
+		$user        = factory( User::class )->create( [
+			'name' => 'The Oz'
+		] );
+		$adminRole   = factory( Role::class )->create();
+		$managerRole = factory( Role::class )->create( [ 'name' => 'Manager', 'slug' => 'manager' ] );
+		$user->attachRole($adminRole);
+		$user->attachRole($managerRole);
+
+		$this->assertTrue($user->isAll([$adminRole->id, $managerRole->id]));
+	}
+
+	public function testSyncRoles() {
+		$user        = factory( User::class )->create( [
+			'name' => 'The Oz'
+		] );
+		$adminRole   = factory( Role::class )->create();
+		$managerRole = factory( Role::class )->create( [ 'name' => 'Manager', 'slug' => 'manager' ] );
+
+		$user->syncRoles([$managerRole->id, $adminRole->id]);
+
+		$this->assertTrue($user->isAll([$adminRole->id, $managerRole->id]));
+
+		config(['roles.pretend.enabled' => true]);
+
+		$this->assertTrue($user->isAll([$adminRole->id, $managerRole->id]));
 	}
 }

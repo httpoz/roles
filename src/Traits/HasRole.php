@@ -35,6 +35,7 @@ trait HasRole {
 					return $this->roles()->get();
 				} );
 			}
+
 			return $this->getCachedRoles();
 		} else {
 			return $this->roles()->get();
@@ -100,7 +101,7 @@ trait HasRole {
 	 */
 	public function hasRole( $role ) {
 		if ( $this->getRoles() ) {
-			return $this->getRoles()->contains( function ( $value, $key ) use ($role) {
+			return $this->getRoles()->contains( function ( $value, $key ) use ( $role ) {
 				return $role == $value->id || Str::is( $role, $value->slug );
 			} );
 		} else {
@@ -157,10 +158,7 @@ trait HasRole {
 	 * @return array
 	 */
 	public function syncRoles( $roles ) {
-		$this->roles = null;
-		if ( config( 'roles.cache.enabled' ) ) {
-			Cache::forget( 'roles.user_' . $this->id );
-		}
+		$this->clearCached();
 
 		return $this->roles()->sync( $roles );
 	}
@@ -253,11 +251,11 @@ trait HasRole {
 	}
 
 	private function getCachedRoles() {
-		return Cache::get('roles.user_' . $this->id);
+		return Cache::get( 'roles.user_' . $this->id );
 	}
 
 	private function clearCached() {
-		( $this->cacheEnabled() ) ? Cache::forget( 'roles.user_' . $this->id ) : true;
+		return ( $this->cacheEnabled() ) ? Cache::forget( 'roles.user_' . $this->id ) : true;
 	}
 
 }
