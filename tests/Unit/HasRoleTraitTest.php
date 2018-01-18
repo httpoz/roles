@@ -113,4 +113,18 @@ class HasRoleTraitTest extends TestCase {
 
 		$this->assertTrue($user->isAll([$adminRole->id, $managerRole->id]));
 	}
+
+	public function testGroup() {
+		$user        = factory( User::class )->create( [
+			'name' => 'The Oz'
+		] );
+		$adminRole   = factory( Role::class )->create();
+		$managerRole = factory( Role::class )->create( [ 'name' => 'Manager', 'slug' => 'manager' ] );
+		$user->attachRole($adminRole);
+
+		$this->assertEquals('system.admin', $user->group());
+		$this->assertTrue($user->inGroup('system.admin'));
+		$this->assertFalse($user->inGroup('default'));
+
+	}
 }

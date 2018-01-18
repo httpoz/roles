@@ -12,20 +12,21 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(\HttpOz\Roles\Tests\Stubs\User::class, function (Faker\Generator $faker) {
-    static $password;
+$factory->define( \HttpOz\Roles\Tests\Stubs\User::class, function ( Faker\Generator $faker ) {
+	static $password;
 
-    return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
-    ];
-});
+	return [
+		'name'           => $faker->name,
+		'email'          => $faker->unique()->safeEmail,
+		'password'       => $password ?: $password = bcrypt( 'secret' ),
+		'remember_token' => str_random( 10 ),
+	];
+} );
 
-$factory->define(HttpOz\Roles\Models\Role::class, function (Faker\Generator $faker) {
-    return [
-      'name' => 'Admin',
-      'slug' => 'admin'
-    ];
-});
+$factory->define( HttpOz\Roles\Models\Role::class, function ( Faker\Generator $faker ) {
+	return [
+		'name'  => 'Admin',
+		'slug'  => 'admin',
+		'group' => 'system.admin'
+	];
+} );
