@@ -22,7 +22,6 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            \HttpOz\Roles\RolesServiceProvider::class,
             \Orchestra\Database\ConsoleServiceProvider::class
         ];
     }
