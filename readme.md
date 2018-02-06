@@ -30,7 +30,6 @@ This project was largely inspired by Roman's [romanbican/roles](https://github.c
     - [Checking For Roles](#checking-for-roles)
     - [Find users by role](#find-users-by-role)
     - [Groups](#groups)
-    - [Entity Check](#entity-check)
     - [Blade Extensions](#blade-extensions)
     - [Middleware](#middleware)
     - [Caching](#caching)
@@ -313,7 +312,7 @@ You can catch these exceptions inside `app/Exceptions/Handler.php` file and do w
 ### Config File
 You can change connection for models, slug separator, models path and there is also a handy pretend feature. Have a look at config file for more information.
 
-#### Caching
+### Caching
 The configuration for cache expiry is defaulted to 2 weeks (in minutes). You can update this value to suit your project specific needs.
 
 ## License
