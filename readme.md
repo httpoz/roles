@@ -1,4 +1,4 @@
-# Roles for Laravel 5.5
+# Roles for Laravel 5.3 to 5.6
 Powerful package for handling roles in Laravel
 
 [![Build Status](https://travis-ci.org/httpoz/roles.svg)](https://travis-ci.org/httpoz/roles)
