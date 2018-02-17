@@ -43,7 +43,7 @@ This package is very easy to set up. There are only couple of steps.
 ### Composer
 Add the package to your project via composer.
 ```bash
-composer require httpoz/roles 3.0.*
+composer require httpoz/roles 3.1.*
 ```
 
 ### Config File And Migrations
