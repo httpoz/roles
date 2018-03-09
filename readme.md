@@ -217,6 +217,7 @@ There are multiple ways to get a list of users by their given role.
     $adminRole = Role::where('group', 'forum.moderator')->first();
     $admins = $adminRole->users;
  ```
+> If you use soft delete on your Users model, and want to include deleted users, you can use `usersWithTrashed` method instead of `users`. 
 
 ### Groups
 ```php
