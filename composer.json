@@ -7,7 +7,7 @@
     "authors": [{
         "name": "Oscar Mwanandimai",
         "email": "oscar.mwana@gmail.com",
-        "role": "Architect"
+        "role": "Engineer"
     }],
     "minimum-stability": "dev",
     "require": {
