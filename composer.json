@@ -7,7 +7,7 @@
     "authors": [{
         "name": "Oscar Mwanandimai",
         "email": "oscar.mwana@gmail.com",
-        "role": "Architect"
+        "role": "Engineer"
     }],
     "minimum-stability": "dev",
     "require": {
@@ -16,8 +16,8 @@
         "illuminate/cache": "~5.0"
     },
     "require-dev": {
-        "orchestra/database": "~3.6.0",
-        "orchestra/testbench": "~3.6.0",
+        "orchestra/database": "~3.7.0",
+        "orchestra/testbench": "~3.7.0",
         "phpunit/phpunit": "~7.0"
     },
     "autoload": {
