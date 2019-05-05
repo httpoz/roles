@@ -13,6 +13,7 @@ class RoleDeniedException extends Exception
      */
     public function __construct($role)
     {
+        parent::__construct();
         $this->message = sprintf("You don't have a required ['%s'] role.", $role);
     }
 }

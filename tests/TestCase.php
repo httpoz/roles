@@ -10,7 +10,7 @@ class TestCase extends Orchestra
     /**
      * Setup the test environment.
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->loadLaravelMigrations(['--database' => 'testbench']);
@@ -36,9 +36,9 @@ class TestCase extends Orchestra
     {
         $app['config']->set('database.default', 'testbench');
         $app['config']->set('database.connections.testbench', [
-            'driver'   => 'sqlite',
+            'driver' => 'sqlite',
             'database' => ':memory:',
-            'prefix'   => '',
+            'prefix' => '',
         ]);
         $app['config']->set('auth.providers.users.model', User::class);
 
@@ -68,8 +68,8 @@ class TestCase extends Orchestra
      */
     protected function setUpDatabase($app)
     {
-        include_once __DIR__.'/../database/migrations/create_roles_table.php';
-        include_once __DIR__.'/../database/migrations/create_role_user_table.php';
+        include_once __DIR__ . '/../database/migrations/create_roles_table.php';
+        include_once __DIR__ . '/../database/migrations/create_role_user_table.php';
         (new \CreateRolesTable())->up();
         (new \CreateRoleUserTable())->up();
     }
