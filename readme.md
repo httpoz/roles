@@ -13,8 +13,8 @@ Powerful package for handling roles in Laravel
 | 5.3.*  | [Roles 1.4.x](https://github.com/httpoz/roles/tree/1.4) |
 | 5.4.*  | [Roles 2.3.x](https://github.com/httpoz/roles/tree/2.3) |
 | 5.5.*  | [Roles 3.0.x](https://github.com/httpoz/roles/tree/3.0) |
-| 5.6.*  | [Roles 3.1.x](https://github.com/httpoz/roles/tree/3.1) |
-| 5.7.*  | [Roles 3.2.x](https://github.com/httpoz/roles/tree/3.2) |
+| 5.6.*  | [Roles 3.1.x](https://github.com/httpoz/roles/tree/v3.1.0) |
+| 5.7.*  | [Roles 3.2.x](https://github.com/httpoz/roles/tree/3.2.0) |
 | 5.8.*  | Roles 3.3.x
 
 #### History
@@ -43,7 +43,7 @@ This package is very easy to set up. There are only couple of steps.
 ### Composer
 Add the package to your project via composer.
 ```bash
-composer require httpoz/roles 3.2.*
+composer require httpoz/roles:~v3.3.0
 ```
 
 ### Config File And Migrations
