@@ -12,6 +12,7 @@ class GroupDeniedException extends Exception
      */
     public function __construct($group)
     {
+        parent::__construct();
         $this->message = sprintf("You are not in the required [%s] group.", $group);
     }
 }
