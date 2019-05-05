@@ -16,8 +16,8 @@
         "illuminate/cache": "~5.0"
     },
     "require-dev": {
-        "orchestra/database": "~3.7.0",
-        "orchestra/testbench": "~3.7.0",
+        "orchestra/database": "~3.8.0",
+        "orchestra/testbench": "~3.8.0",
         "phpunit/phpunit": "~7.0"
     },
     "autoload": {

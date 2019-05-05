@@ -1,13 +1,11 @@
-# Roles for Laravel 5.3 to 5.6
+# Roles for Laravel 5.3 to 5.8
 Powerful package for handling roles in Laravel
 
 [![Build Status](https://travis-ci.org/httpoz/roles.svg)](https://travis-ci.org/httpoz/roles)
 [![codecov](https://codecov.io/gh/httpoz/roles/branch/master/graph/badge.svg)](https://codecov.io/gh/httpoz/roles)
 [![Total Downloads](https://poser.pugx.org/httpoz/roles/d/total.svg)](https://packagist.org/packages/httpoz/roles)
 [![PHPPackages Rank](http://phppackages.org/p/httpoz/roles/badge/rank.svg)](http://phppackages.org/p/httpoz/roles)
-[![PHPPackages Referenced By](http://phppackages.org/p/httpoz/roles/badge/referenced-by.svg)](http://phppackages.org/p/httpoz/roles)
 [![Latest Stable Version](https://poser.pugx.org/httpoz/roles/v/stable.svg)](https://packagist.org/packages/httpoz/roles)
-[![Latest Unstable Version](https://poser.pugx.org/httpoz/roles/v/unstable.svg)](https://packagist.org/packages/httpoz/roles)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/307f89bf-52b1-4d2e-9a62-350d1f5de141/small.png)](https://insight.sensiolabs.com/projects/307f89bf-52b1-4d2e-9a62-350d1f5de141)
 
 |Laravel Version |Roles Version  |
@@ -16,7 +14,8 @@ Powerful package for handling roles in Laravel
 | 5.4.*  | [Roles 2.3.x](https://github.com/httpoz/roles/tree/2.3) |
 | 5.5.*  | [Roles 3.0.x](https://github.com/httpoz/roles/tree/3.0) |
 | 5.6.*  | [Roles 3.1.x](https://github.com/httpoz/roles/tree/3.1) |
-| 5.7.*  | Roles 3.2.x
+| 5.7.*  | [Roles 3.2.x](https://github.com/httpoz/roles/tree/3.2) |
+| 5.8.*  | Roles 3.3.x
 
 #### History
 This project was largely inspired by Roman's [romanbican/roles](https://github.com/romanbican/roles/) Laravel package. However at the time Laravel 5.3 was released his package was not actively maintained. I have ommitted permissions in this package in favour of Laravel's [Authorization](https://laravel.com/docs/5.3/authorization). I intend to keep this package as simple and minimal as is possible.
