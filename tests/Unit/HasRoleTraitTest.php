@@ -16,7 +16,7 @@ class HasRoleTraitTest extends TestCase {
 
 		$user->attachRole( $adminRole );
 
-		$this->assertEquals( 1, count( $user->roles()->count() ) );
+		$this->assertEquals( 1, $user->roles()->count());
 	}
 
 	public function testCanDetachRole() {
