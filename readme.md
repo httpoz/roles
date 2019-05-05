@@ -6,7 +6,6 @@ Powerful package for handling roles in Laravel
 [![Total Downloads](https://poser.pugx.org/httpoz/roles/d/total.svg)](https://packagist.org/packages/httpoz/roles)
 [![PHPPackages Rank](http://phppackages.org/p/httpoz/roles/badge/rank.svg)](http://phppackages.org/p/httpoz/roles)
 [![Latest Stable Version](https://poser.pugx.org/httpoz/roles/v/stable.svg)](https://packagist.org/packages/httpoz/roles)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/307f89bf-52b1-4d2e-9a62-350d1f5de141/small.png)](https://insight.sensiolabs.com/projects/307f89bf-52b1-4d2e-9a62-350d1f5de141)
 
 |Laravel Version |Roles Version  |
 |--------|----------|
