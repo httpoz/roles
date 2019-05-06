@@ -2,6 +2,7 @@
 
 namespace HttpOz\Roles\Traits;
 
+use HttpOz\Roles\Events\UserRoleAttached;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Cache;
 
@@ -121,6 +122,7 @@ trait HasRole {
 			$this->clearCached();
 			$this->roles()->attach( $role );
 		}
+        event(new UserRoleAttached($role));
 
 		return true;
 	}

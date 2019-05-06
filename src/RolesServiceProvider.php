@@ -2,6 +2,7 @@
 
 namespace HttpOz\Roles;
 
+use HttpOz\Roles\Providers\RolesEventServiceProvider;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
 
@@ -43,6 +44,7 @@ class RolesServiceProvider extends ServiceProvider
 
     public function register()
     {
+        app()->register(RolesEventServiceProvider::class);
         $this->mergeConfigFrom(__DIR__ . '/../config/roles.php', 'roles');
     }
 
