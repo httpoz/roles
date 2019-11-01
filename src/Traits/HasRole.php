@@ -235,8 +235,8 @@ trait HasRole {
 	 * @return mixed
 	 */
 	public function __call( $method, $parameters ) {
-		if ( starts_with( $method, 'is' ) ) {
-			return $this->isRole( snake_case( substr( $method, 2 ), config( 'roles.separator' ) ) );
+		if ( Str::startsWith( $method, 'is' ) ) {
+			return $this->isRole( Str::snake( substr( $method, 2 ), config( 'roles.separator' ) ) );
 		}
 
 		return parent::__call( $method, $parameters );
