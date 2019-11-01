@@ -12,6 +12,9 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
+
+use Illuminate\Support\Str;
+
 $factory->define( \HttpOz\Roles\Tests\Stubs\User::class, function ( Faker\Generator $faker ) {
 	static $password;
 
@@ -19,7 +22,7 @@ $factory->define( \HttpOz\Roles\Tests\Stubs\User::class, function ( Faker\Genera
 		'name'           => $faker->name,
 		'email'          => $faker->unique()->safeEmail,
 		'password'       => $password ?: $password = bcrypt( 'secret' ),
-		'remember_token' => str_random( 10 ),
+		'remember_token' => Str::random( 10 ),
 	];
 } );
 

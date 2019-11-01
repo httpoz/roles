@@ -2,6 +2,8 @@
 
 namespace HttpOz\Roles\Traits;
 
+use Illuminate\Support\Str;
+
 trait Sluggable
 {
     /**
@@ -13,12 +15,12 @@ trait Sluggable
 
     public function setSlugAttribute($value)
     {
-        $this->attributes['slug'] = str_slug($value, config('roles.separator'));
+        $this->attributes['slug'] = Str::slug($value, config('roles.separator'));
     }
 
     public function setGroupAttribute($value)
     {
-        $this->attributes['group'] = str_slug($value, config('roles.separator'));
+        $this->attributes['group'] = Str::slug($value, config('roles.separator'));
     }
 
 }
