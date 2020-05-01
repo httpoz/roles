@@ -24,4 +24,18 @@ class UserRoleTest extends TestCase
 
         $this->assertEquals($role->slug, $adminRole->slug);
     }
+
+    public function testUserHasRoleOnAttachDupilcate()
+    {
+        $admin = factory(User::class)->create();
+        $role  = factory(Role::class)->create();
+
+        $adminRole = Role::findBySlug('admin');
+        $user = User::find(1);
+        $admin->detachAllRoles();
+        $admin->attachRole($adminRole);
+        $admin->attachRole($adminRole);
+
+        $this->assertCount(1, $user->roles);
+    }
 }
