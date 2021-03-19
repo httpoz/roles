@@ -16,21 +16,14 @@ class RolesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__ . '/../config/roles.php' => config_path('roles.php')
-        ], 'config');
-        
-        $stub      = __DIR__ . '/../database/migrations/';
-        $target    = database_path('migrations').'/';
-        
-        $this->publishes([
-            $stub.'create_roles_table.php'     => $target . '2016_09_04_000000_create_roles_table.php',
-            $stub.'create_role_user_table.php' => $target . '2016_09_04_100000_create_role_user_table.php'
-        ], 'migrations');
+        // Load migrations
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations/');
 
-        $this->publishes([
-            __DIR__.'/../resources/views' => base_path('resources/views/vendor'),
-        ], 'views');
+        // publish config file
+        $this->publishes([__DIR__ . '/../config/roles.php' => config_path('roles.php')], 'config');
+
+        // publish views
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'roles');
 
         $this->registerBladeExtensions();
     }

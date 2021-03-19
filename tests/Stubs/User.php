@@ -2,6 +2,7 @@
 
 namespace HttpOz\Roles\Tests\Stubs;
 
+use HttpOz\Roles\Database\Factories\UserFactory;
 use \HttpOz\Roles\Traits\HasRole;
 use \HttpOz\Roles\Contracts\HasRole as HasRoleContract;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -20,5 +21,12 @@ class User extends Eloquent implements HasRoleContract
     public function getAuthIdentifiersName(): array
     {
         return ['email', 'username'];
+    }
+
+
+
+    protected static function newFactory()
+    {
+        return new UserFactory();
     }
 }

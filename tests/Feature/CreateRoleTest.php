@@ -14,7 +14,7 @@ class CreateRoleTest extends TestCase
    */
     public function testCanCreateRole()
     {
-        $adminRole = factory(Role::class)->create([
+        $adminRole = Role::factory()->create([
         'name'        => 'Admin',
         'slug'        => 'admin',
         'description' => 'Custodians of the system.',

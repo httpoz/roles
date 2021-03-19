@@ -2,7 +2,11 @@
 
 namespace HttpOz\Roles\Tests;
 
+use HttpOz\Roles\Models\Role;
+use HttpOz\Roles\RolesServiceProvider;
 use HttpOz\Roles\Tests\Stubs\User;
+use Illuminate\Foundation\Application;
+use Orchestra\Database\ConsoleServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -15,21 +19,20 @@ class TestCase extends Orchestra
         parent::setUp();
         $this->loadLaravelMigrations(['--database' => 'testbench']);
         $this->setUpDatabase($this->app);
-
-        $this->withFactories(__DIR__ . '/../database/factories');
     }
 
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [
-            \Orchestra\Database\ConsoleServiceProvider::class
+            RolesServiceProvider::class,
+            ConsoleServiceProvider::class
         ];
     }
 
     /**
      * Define environment setup.
      *
-     * @param  \Illuminate\Foundation\Application $app
+     * @param  Application  $app
      * @return void
      */
     public function getEnvironmentSetUp($app)
@@ -50,7 +53,7 @@ class TestCase extends Orchestra
                 'expiry' => 20160,
             ],
             'models' => [
-                'role' => \HttpOz\Roles\Models\Role::class
+                'role' => Role::class
             ],
             'pretend' => [
                 'enabled' => false,
@@ -64,7 +67,7 @@ class TestCase extends Orchestra
     /**
      * Set up the database.
      *
-     * @param \Illuminate\Foundation\Application $app
+     * @param  Application  $app
      */
     protected function setUpDatabase($app)
     {

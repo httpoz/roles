@@ -3,7 +3,9 @@
 namespace HttpOz\Roles\Models;
 
 
+use HttpOz\Roles\Database\Factories\RoleFactory;
 use HttpOz\Roles\Traits\Sluggable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 use HttpOz\Roles\Traits\RoleHasRelations;
@@ -11,7 +13,7 @@ use HttpOz\Roles\Contracts\RoleHasRelations as RoleHasRelationsContract;
 
 class Role extends Model implements RoleHasRelationsContract {
 
-  use Sluggable, RoleHasRelations;
+  use Sluggable, RoleHasRelations, HasFactory;
 
   /**
    * The attributes that are mass assignable.
@@ -40,6 +42,11 @@ class Role extends Model implements RoleHasRelationsContract {
    */
   public static function findBySlug($slug) {
     return self::where('slug', $slug)->first();
+  }
+
+  protected static function newFactory()
+  {
+      return new RoleFactory();
   }
 
 }

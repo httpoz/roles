@@ -34,7 +34,7 @@ return [
     |
     | Here you can enable cache and change the period for which cache should
     | remember the roles. Time should be in seconds, refer to official docs
-    | https://laravel.com/docs/5.8/cache.
+    | https://laravel.com/docs/8.x/cache.
     */
 
     'cache' => [

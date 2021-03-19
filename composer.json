@@ -12,8 +12,8 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^7.3|^8.0",
-        "illuminate/support": "~8.0",
-        "illuminate/cache": "~8.0"
+        "illuminate/cache": "^8.0",
+        "illuminate/support": "^8.0"
     },
     "require-dev": {
         "orchestra/database": "^6.0",
@@ -22,7 +22,8 @@
     },
     "autoload": {
         "psr-4": {
-            "HttpOz\\Roles\\": "src/"
+            "HttpOz\\Roles\\": "src/",
+            "HttpOz\\Roles\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
@@ -31,6 +32,8 @@
         }
     },
     "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
         "sort-packages": true
     },
     "extra": {
