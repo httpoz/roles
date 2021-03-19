@@ -2,6 +2,7 @@ site/
 vendor/
 /.phpintel
 /build
+.phpunit.result.cache
 
 # hack
 composer.lock

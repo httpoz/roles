@@ -8,19 +8,8 @@ Powerful package for handling roles in Laravel
 [![Latest Stable Version](https://poser.pugx.org/httpoz/roles/v/stable.svg)](https://packagist.org/packages/httpoz/roles)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/307f89bf-52b1-4d2e-9a62-350d1f5de141/small.png)](https://insight.sensiolabs.com/projects/307f89bf-52b1-4d2e-9a62-350d1f5de141)
 
-|Laravel Version |Roles Version  |
-|--------|----------|
-| 5.3.*  | [Roles 1.4.x](https://github.com/httpoz/roles/tree/v1.4.0) |
-| 5.4.*  | [Roles 2.3.x](https://github.com/httpoz/roles/tree/v2.0.0) |
-| 5.5.*  | [Roles 3.0.x](https://github.com/httpoz/roles/tree/v3.0.0) |
-| 5.6.*  | [Roles 3.1.x](https://github.com/httpoz/roles/tree/v3.1.0) |
-| 5.7.*  | [Roles 3.2.x](https://github.com/httpoz/roles/tree/v3.2.0) |
-| 5.8.*  | [Roles 3.3.x](https://github.com/httpoz/roles/tree/v3.3.0) |
-| 6.x    | [Roles 4.x](https://github.com/httpoz/roles/tree/v4.0.0) |
-| 7.x    | Roles 5.x
-
-#### History
-This project was largely inspired by Roman's [romanbican/roles](https://github.com/romanbican/roles/) Laravel package. However at the time Laravel 5.3 was released his package was not actively maintained. I have ommitted permissions in this package in favour of Laravel's [Authorization](https://laravel.com/docs/6.x/authorization). I intend to keep this package as simple and minimal as is possible.
+#### Previous Versions
+For Previous versions please see the [releases page](https://github.com/httpoz/roles/releases)
 
 - [Installation](#installation)
     - [Composer](#composer)
@@ -45,7 +34,7 @@ This package is very easy to set up. There are only couple of steps.
 ### Composer
 Add the package to your project via composer.
 ```bash
-composer require httpoz/roles:^v5.0
+composer require httpoz/roles:^v8.0
 ```
 
 ### Config File And Migrations
