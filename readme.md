@@ -10,13 +10,14 @@ Powerful package for handling roles in Laravel
 
 |Laravel Version |Roles Version  |
 |--------|----------|
-| 5.3.*  | [Roles 1.4.x](https://github.com/httpoz/roles/tree/1.4) |
-| 5.4.*  | [Roles 2.3.x](https://github.com/httpoz/roles/tree/2.3) |
-| 5.5.*  | [Roles 3.0.x](https://github.com/httpoz/roles/tree/3.0) |
+| 5.3.*  | [Roles 1.4.x](https://github.com/httpoz/roles/tree/v1.4.0) |
+| 5.4.*  | [Roles 2.3.x](https://github.com/httpoz/roles/tree/v2.0.0) |
+| 5.5.*  | [Roles 3.0.x](https://github.com/httpoz/roles/tree/v3.0.0) |
 | 5.6.*  | [Roles 3.1.x](https://github.com/httpoz/roles/tree/v3.1.0) |
-| 5.7.*  | [Roles 3.2.x](https://github.com/httpoz/roles/tree/3.2.0) |
-| 5.8.*  | [Roles 3.3.x](https://github.com/httpoz/roles/tree/3.3.0) |
-| 6.x  | Roles 4.x
+| 5.7.*  | [Roles 3.2.x](https://github.com/httpoz/roles/tree/v3.2.0) |
+| 5.8.*  | [Roles 3.3.x](https://github.com/httpoz/roles/tree/v3.3.0) |
+| 6.x    | [Roles 4.x](https://github.com/httpoz/roles/tree/v4.0.0) |
+| 7.x    | Roles 5.x
 
 #### History
 This project was largely inspired by Roman's [romanbican/roles](https://github.com/romanbican/roles/) Laravel package. However at the time Laravel 5.3 was released his package was not actively maintained. I have ommitted permissions in this package in favour of Laravel's [Authorization](https://laravel.com/docs/6.x/authorization). I intend to keep this package as simple and minimal as is possible.
@@ -44,7 +45,7 @@ This package is very easy to set up. There are only couple of steps.
 ### Composer
 Add the package to your project via composer.
 ```bash
-composer require httpoz/roles:^v4.0
+composer require httpoz/roles:^v5.0
 ```
 
 ### Config File And Migrations
