@@ -11,13 +11,13 @@
     }],
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.2",
-        "illuminate/support": "~6.0",
-        "illuminate/cache": "~6.0"
+        "php": "^7.2.5",
+        "illuminate/support": "~7.0",
+        "illuminate/cache": "~7.0"
     },
     "require-dev": {
-        "orchestra/database": "^4.0",
-        "orchestra/testbench": "^4.0",
+        "orchestra/database": "^5.0",
+        "orchestra/testbench": "^5.0",
         "phpunit/phpunit": "~8.0"
     },
     "autoload": {
