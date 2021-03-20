@@ -10,8 +10,8 @@ class RoleHasRelationsTraitTest extends TestCase
 {
     public function testRoleCanFetchUsers()
     {
-        $role = factory(Role::class)->create();
-        factory(User::class, 10)->create()->each(function ($u) use ($role) {
+        $role = Role::factory()->create();
+        User::factory(10)->create()->each(function ($u) use ($role) {
             $u->attachRole($role);
         });
 

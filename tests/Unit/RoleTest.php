@@ -3,16 +3,13 @@
 namespace HttpOz\Roles\Tests\Unit;
 
 use HttpOz\Roles\Models\Role;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use HttpOz\Roles\Tests\TestCase;
 
 class RoleTest extends TestCase
 {
-    use DatabaseMigrations;
-
     public function testRoleCanBeFoundBySlug()
     {
-        $createdRole = factory(Role::class)->create(['name' => 'Admin', 'slug' => 'admin']);
+        $createdRole = Role::factory()->create(['name' => 'Admin', 'slug' => 'admin']);
         $foundRole = Role::findBySlug('admin');
 
         $this->assertEquals($createdRole->id, $foundRole->id);
