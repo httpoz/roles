@@ -2,6 +2,8 @@
 
 namespace HttpOz\Roles\Contracts;
 
+use HttpOz\Roles\Models\Role;
+
 interface HasRole
 {
     /**
@@ -54,15 +56,15 @@ interface HasRole
     /**
      * Attach role to a user.
      *
-     * @param int|\HttpOz\Roles\Models\Role $role
-     * @return null|bool
+     * @param  int|Role  $role
+     * @return bool
      */
-    public function attachRole($role);
+    public function attachRole(int|Role $role): bool;
 
     /**
      * Detach role from a user.
      *
-     * @param int|\HttpOz\Roles\Models\Role $role
+     * @param int|Role $role
      * @return int
      */
     public function detachRole($role);
@@ -70,7 +72,7 @@ interface HasRole
     /**
      * Sync roles for a user.
      *
-     * @param array|\HttpOz\Roles\Models\Role[]|\Illuminate\Database\Eloquent\Collection $roles
+     * @param array|Role[]|\Illuminate\Database\Eloquent\Collection $roles
      * @return array
      */
     public function syncRoles($roles);
