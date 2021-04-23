@@ -2,6 +2,7 @@
 
 namespace HttpOz\Roles\Traits;
 
+use HttpOz\Roles\Models\Role;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Cache;
 
@@ -109,15 +110,16 @@ trait HasRole {
 		}
 	}
 
-	/**
-	 * Attach role to a user.
-	 *
-	 * @param int|\HttpOz\Roles\Models\Role $role
-	 *
-	 * @return bool
-	 */
-	public function attachRole( $role ) {
-		if ( ! collect( $this->getRoles() )->contains( $role ) ) {
+    /**
+     * Attach role to a user.
+     *
+     * @param  int|Role  $role
+     *
+     * @return bool
+     */
+	public function attachRole(int|Role $role): bool
+    {
+		if ( ! $this->getRoles()->contains( $role ) ) {
 			$this->clearCached();
 			$this->roles()->attach( $role );
 		}
@@ -128,7 +130,7 @@ trait HasRole {
 	/**
 	 * Detach role from a user.
 	 *
-	 * @param int|\HttpOz\Roles\Models\Role $role
+	 * @param int|Role $role
 	 *
 	 * @return int
 	 */
@@ -153,7 +155,7 @@ trait HasRole {
 	/**
 	 * Sync roles for a user.
 	 *
-	 * @param array|\HttpOz\Roles\Models\Role[]|\Illuminate\Database\Eloquent\Collection $roles
+	 * @param array|Role[]|\Illuminate\Database\Eloquent\Collection $roles
 	 *
 	 * @return array
 	 */
