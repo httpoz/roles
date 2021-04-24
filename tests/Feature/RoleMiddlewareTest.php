@@ -31,7 +31,6 @@ class RoleMiddlewareTest extends TestCase
 
         $this->actingAs($createdUser);
 
-
         $this->assertEquals($createdRole->id, $foundRole->id);
         $this->assertEquals($createdUser->name, $foundUser->name);
     }
