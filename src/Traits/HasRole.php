@@ -117,7 +117,7 @@ trait HasRole {
      *
      * @return bool
      */
-	public function attachRole(int|Role $role): bool
+	public function attachRole($role): bool
     {
 		if ( ! $this->getRoles()->contains( $role ) ) {
 			$this->clearCached();
