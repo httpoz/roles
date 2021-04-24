@@ -59,7 +59,7 @@ interface HasRole
      * @param  int|Role  $role
      * @return bool
      */
-    public function attachRole(int|Role $role): bool;
+    public function attachRole($role): bool;
 
     /**
      * Detach role from a user.
