@@ -1,5 +1,5 @@
 {
-    "name": "httpoz/roles",
+    "name": "codebros/roles",
     "description": "Powerful package for handling roles and permissions in Laravel 5.3.",
     "keywords": ["roles", "permissions", "acl", "laravel", "illuminate", "httpoz"],
     "homepage": "https://github.com/httpoz/roles",
