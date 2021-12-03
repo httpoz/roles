@@ -1,10 +1,5 @@
 # Roles for Laravel
-Simple package for handling roles in Laravel.
-
-[![Build Status](https://travis-ci.org/httpoz/roles.svg)](https://travis-ci.org/httpoz/roles)
-[![Total Downloads](https://poser.pugx.org/httpoz/roles/d/total.svg)](https://packagist.org/packages/httpoz/roles)
-[![codecov](https://codecov.io/gh/httpoz/roles/branch/master/graph/badge.svg)](https://codecov.io/gh/httpoz/roles)
-[![Latest Stable Version](https://poser.pugx.org/httpoz/roles/v/stable.svg)](https://packagist.org/packages/httpoz/roles)
+Simple package for handling roles in Laravel based upon [HttpOz](https://github.com/httpoz/roles).
 
 ## Installation
 This package is very easy to set up. There are only couple of steps.
@@ -16,7 +11,7 @@ For Previous versions please see the [releases page](https://github.com/httpoz/r
 ### Composer
 Add the package to your project via composer.
 ```bash
-composer require httpoz/roles:^v8.0
+composer require codebros/roles:^v8.0
 ```
 
 ### Config File And Migrations
