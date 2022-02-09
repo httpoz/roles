@@ -7,7 +7,7 @@ Simple package for handling roles in Laravel.
 [![Latest Stable Version](https://poser.pugx.org/httpoz/roles/v/stable.svg)](https://packagist.org/packages/httpoz/roles)
 
 ## Installation
-This package is very easy to set up. There are only couple of steps.
+This package is very easy to set up. There are only a couple of steps.
 
 ### Previous Versions
 
@@ -16,7 +16,7 @@ For Previous versions please see the [releases page](https://github.com/httpoz/r
 ### Composer
 Add the package to your project via composer.
 ```bash
-composer require httpoz/roles:^v8.0
+composer require httpoz/roles:^v9.0
 ```
 
 ### Config File And Migrations
@@ -205,7 +205,7 @@ if ($user->inGroup('application.managers')) {
 
 > If a user has multiple roles, method `group` returns the first one in alphabetical order (a better implementation of this will be explored).
 
-`Group` is intended to collectively organise and assign permissions (Laravel's built in authorization feature) to a role group that can be shared by multiple roles (examples and implementation to be added to documentation in future).
+`Group` is intended to collectively organise and assign permissions (Laravel's built-in authorization feature) to a role group that can be shared by multiple roles (examples and implementation to be added to documentation in future).
 
 ### Blade Extensions
 

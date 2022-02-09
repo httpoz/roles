@@ -1,6 +1,6 @@
 {
     "name": "httpoz/roles",
-    "description": "Powerful package for handling roles and permissions in Laravel 5.3.",
+    "description": "Powerful package for handling roles and permissions in Laravel",
     "keywords": ["roles", "permissions", "acl", "laravel", "illuminate", "httpoz"],
     "homepage": "https://github.com/httpoz/roles",
     "license": "MIT",
@@ -11,14 +11,14 @@
     }],
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.3|^8.0",
-        "illuminate/cache": "^8.0",
-        "illuminate/support": "^8.0"
+        "php": "^8.0",
+        "illuminate/cache": "^9.0",
+        "illuminate/support": "^9.0"
     },
     "require-dev": {
-        "orchestra/database": "^6.0",
-        "orchestra/testbench": "^6.0",
-        "phpunit/phpunit": "^9.0"
+        "orchestra/database": "^7.0",
+        "orchestra/testbench": "^7.0",
+        "phpunit/phpunit": "^9.5.10"
     },
     "autoload": {
         "psr-4": {
