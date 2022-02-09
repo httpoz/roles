@@ -63,7 +63,7 @@ $moderatorRole = \HttpOz\Roles\Models\Role::create([
 ]);
 ```
 
-> Because of `Slugable` trait, if you make a mistake and for example leave a space in slug parameter, it'll be replaced with a dot automatically, because of `str_slug` function.
+> Because of `Sluggable` trait, if you make a mistake and for example leave a space in slug parameter, it'll be replaced with a dot automatically, because of `str_slug` function.
 
 ### Attaching And Detaching Roles
 

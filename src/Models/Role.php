@@ -4,17 +4,18 @@ namespace HttpOz\Roles\Models;
 
 
 use HttpOz\Roles\Database\Factories\RoleFactory;
-use HttpOz\Roles\Traits\Sluggable;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 use HttpOz\Roles\Traits\RoleHasRelations;
 use HttpOz\Roles\Contracts\RoleHasRelations as RoleHasRelationsContract;
+use Illuminate\Support\Str;
 
 class Role extends Model implements RoleHasRelationsContract
 {
 
-    use Sluggable, RoleHasRelations, HasFactory;
+    use RoleHasRelations, HasFactory;
 
     /**
      * The attributes that are mass assignable.
@@ -25,10 +26,6 @@ class Role extends Model implements RoleHasRelationsContract
 
     /**
      * Create a new model instance.
-     *
-     * @param array $attributes
-     *
-     * @return void
      */
     public function __construct(array $attributes = [])
     {
@@ -52,4 +49,17 @@ class Role extends Model implements RoleHasRelationsContract
         return new RoleFactory();
     }
 
+    public function Slug(): Attribute
+    {
+        return new Attribute(
+          set: fn ($value) => Str::slug($value, config('roles.separator')),
+        );
+    }
+
+    public function Group(): Attribute
+    {
+        return new Attribute(
+          set: fn ($value) => Str::slug($value, config('roles.separator')),
+        );
+    }
 }
