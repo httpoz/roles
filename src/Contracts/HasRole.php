@@ -3,91 +3,63 @@
 namespace HttpOz\Roles\Contracts;
 
 use HttpOz\Roles\Models\Role;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 interface HasRole
 {
     /**
      * User belongs to many roles.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function roles();
+    public function roles(): BelongsToMany;
 
     /**
      * Get all roles as collection.
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getRoles();
+    public function getRoles(): Collection;
 
     /**
      * Check if the user has a role or roles.
-     *
-     * @param int|string|array $role
-     * @param bool $all
-     * @return bool
      */
-    public function isRole($role, $all = false);
+    public function isRole(array|int|string $role, bool $all = false): bool;
 
     /**
      * Check if the user has all roles.
-     *
-     * @param int|string|array $role
-     * @return bool
      */
-    public function isAll($role);
+    public function isAll(array|int|string $role): bool;
 
     /**
      * Check if the user has at least one role.
-     *
-     * @param int|string|array $role
-     * @return bool
      */
-    public function isOne($role);
+    public function isOne(array|int|string $role): bool;
 
     /**
      * Check if the user has role.
-     *
-     * @param int|string $role
-     * @return bool
      */
-    public function hasRole($role);
+    public function hasRole(int|string $role): bool;
 
     /**
      * Attach role to a user.
-     *
-     * @param  int|Role  $role
-     * @return bool
      */
-    public function attachRole($role): bool;
+    public function attachRole(int|Role $role): bool;
 
     /**
      * Detach role from a user.
-     *
-     * @param int|Role $role
-     * @return int
      */
-    public function detachRole($role);
+    public function detachRole(int|Role $role): int;
     
     /**
      * Sync roles for a user.
-     *
-     * @param array|Role[]|\Illuminate\Database\Eloquent\Collection $roles
-     * @return array
      */
-    public function syncRoles($roles);
+    public function syncRoles(Collection|array $roles): array;
 
     /**
      * Detach all roles from a user.
-     *
-     * @return int
      */
-    public function detachAllRoles();
+    public function detachAllRoles(): int;
 
     /**
      * Get role group of a user.
-     *
-     * @return string
      */
-    public function group();
+    public function group(): string;
 }
