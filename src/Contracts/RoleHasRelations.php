@@ -3,14 +3,16 @@
 namespace HttpOz\Roles\Contracts;
 
 
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+
 interface RoleHasRelations
 {
     /**
      * Role belongs to many users.
      *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * @return BelongsToMany
      */
 
-    public function users();
+    public function users(): BelongsToMany;
 
 }

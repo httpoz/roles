@@ -5,36 +5,30 @@ namespace HttpOz\Roles\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use HttpOz\Roles\Exceptions\RoleDeniedException;
+use Illuminate\Http\Request;
 
 
 class VerifyRole
 {
     /**
-     * @var \Illuminate\Contracts\Auth\Guard
-     */
-    protected $auth;
-
-    /**
      * Create a new filter instance.
      *
-     * @param \Illuminate\Contracts\Auth\Guard $auth
+     * @param Guard $auth
      * @return void
      */
-    public function __construct(Guard $auth)
+    public function __construct(protected Guard $auth)
     {
-        $this->auth = $auth;
     }
 
     /**
      * Handle an incoming request.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \Closure $next
+     * @param Request $request
+     * @param Closure $next
      * @param int|string $role
      * @return mixed
-     * @throws \HttpOz\Roles\Exceptions\RoleDeniedException
+     * @throws RoleDeniedException
      */
-    public function handle($request, Closure $next, $role)
+    public function handle(Request $request, Closure $next, int|string $role): mixed
     {
         if ($this->auth->check() && $this->auth->user()->isRole($role)) {
             return $next($request);
