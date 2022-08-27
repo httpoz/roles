@@ -25,7 +25,7 @@ class User extends Eloquent implements HasRoleContract
 
 
 
-    protected static function newFactory()
+    protected static function newFactory(): UserFactory
     {
         return new UserFactory();
     }

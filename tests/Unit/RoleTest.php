@@ -16,4 +16,25 @@ class RoleTest extends TestCase
         $this->assertEquals($createdRole->name, $foundRole->name);
         $this->assertEquals($createdRole->slug, $foundRole->slug);
     }
+
+    /**
+     * @dataProvider roleProvider
+     */
+    public function testMinimalInputRoleCreation(string $name, ?string $slug, string $expected): void
+    {
+        $role = Role::create(['name' => $name, 'slug' => $slug]);
+
+        $this->assertEquals($expected, $role->slug);
+    }
+
+    public function roleProvider(): array
+    {
+        return [
+            ['Big Fish', 'Big Fish', 'big.fish'],
+            ['Small Fish', 'small.fish', 'small.fish'],
+            ['Medium Fish', 'medium_fish', 'mediumfish'],
+            ['Dashing Fish', 'dashing-fish', 'dashing.fish'],
+            ['Dashing Fish', null, 'dashing.fish']
+        ];
+    }
 }
