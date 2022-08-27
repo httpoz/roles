@@ -25,7 +25,6 @@ class RoleTest extends TestCase
         $role = Role::create(['name' => $name, 'slug' => $slug]);
 
         $this->assertEquals($expected, $role->slug);
-        $this->assertEquals('default', $role->group);
     }
 
     public function roleProvider(): array
@@ -34,7 +33,8 @@ class RoleTest extends TestCase
             ['Big Fish', 'Big Fish', 'big.fish'],
             ['Small Fish', 'small.fish', 'small.fish'],
             ['Medium Fish', 'medium_fish', 'mediumfish'],
-            ['Dashing Fish', 'dashing-fish', 'dashing.fish']
+            ['Dashing Fish', 'dashing-fish', 'dashing.fish'],
+            ['Dashing Fish', null, 'dashing.fish']
         ];
     }
 }
